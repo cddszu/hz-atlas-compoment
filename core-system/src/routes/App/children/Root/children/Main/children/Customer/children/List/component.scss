@@ -1,0 +1,180 @@
+.customer-component {
+  height: 100%;
+  .customer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 86px;
+    line-height: 86px;
+    padding: 0 30px;
+    color: #FFF;
+    background-color: #D40001;
+    .group-icon {
+      font-size: 34px;
+      color: #FFF;
+    }
+    .center-container {
+      display: flex;
+      align-items: center;
+      .head-title {
+        font-size: 36px;
+        font-weight: 500;
+      }
+      .switch-icon {
+        font-size: 40px;
+      }
+      .down {
+        &::before {
+          display: inline-block;
+          transform: rotate(90deg);
+        }
+      }
+      .up {
+        &::before {
+          display: inline-block;
+          transform: rotate(270deg);
+        }
+      }
+    }
+    .search-icon {
+      font-size: 33px;
+    }
+  }
+  .customer-container {
+    height: calc(100% - 176px);
+  }
+  .list-items {
+    background-color: #FFF;
+    .list-item{
+      padding:16px 0px 0px 30px;
+      .first-line {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        margin-bottom: 38px;
+        .left-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 100px;
+          background: linear-gradient(135deg,rgba(255,102,103,1) 0%,rgba(212,0,1,1) 100%);
+          border-radius: 50px;
+          opacity: 0.8012;
+          margin-right: 20px;
+          .company-logo {
+            color: #FFF;
+            font-size: 80px;
+            height: 80px;
+          }
+        }
+        .right-title {
+          width: 570px;
+          .customer-name {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+            width: 570px;
+            .customer-title {
+              font-size: 30px;
+              font-weight: 400;
+              color: #333333;
+              margin-right: 10px;
+            }
+            .customer-id {
+              font-size: 28px;
+              font-weight: 400;
+              color: #666666;
+              margin-right: 74px;
+            }
+          }
+          .customer-tags {
+            display: flex;
+            align-items: center;
+            .business-status {
+              display: inline-block;
+              height: 40px;
+              line-height: 40px;
+              color: #0076FF;
+              font-size: 24px;
+              padding: 0 12px 0 12px;
+              margin-right: 12px;
+              border: 1px solid rgba(0,118,255,0.5);
+              border-radius: 8px;
+              background: rgba(0,118,255,0.1);
+            }
+            .industry {
+              display: inline-block;
+              height: 40px;
+              line-height: 40px;
+              color: #8F77FF;
+              font-size: 24px;
+              padding: 0 12px 0 12px;
+              margin-right: 12px;
+              border: 1px solid rgba(143,119,255,0.5);
+              border-radius: 8px;
+              background: rgba(143,119,255,0.1);
+            }
+          }
+        }
+
+      }
+      .second-line {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 120px;
+        padding: 0px 30px 30px 0px;
+        border-bottom: 1px solid #E6E6E6; /*no*/
+        .customer-msg {
+          display: inline-block;
+          padding-left: 20px;
+          border-left: 1px solid #E6E6E6; /*no*/
+          &:first-child {
+            padding-left: 0;
+            border: none;
+          }
+          .msg-content {
+            font-size: 28px;
+            font-weight: 400;
+            color: #333333;
+            margin-bottom: 12px;
+          }
+          .msg-title {
+            font-size: 28px;
+            font-weight: 400;
+            color: #BDBDBD;
+          }
+        }
+      }
+    }
+  }
+  .select-list-page {
+    background:rgba(255,255,255,0.8);
+    .select-item {
+      color: #333333;
+      font-size: 32px;
+      font-weight: 400;
+      text-align: center;
+      height: 90px;
+      line-height: 90px;
+      .item-icon {
+        display: none;
+      }
+    }
+    .selected {
+      background-color: #FFF;
+      font-weight: 500;
+      .item-icon {
+        position: absolute;
+        right: 0px;
+        margin-top: 23px;
+        display: inline-block;
+        font-size: 37px;
+        height: 37px;
+        line-height: 37px;
+        color: #108EE9;
+        margin-right: 30px;
+      }
+    }
+  }
+}

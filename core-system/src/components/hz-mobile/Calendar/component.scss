@@ -1,0 +1,131 @@
+
+.calendar-component {
+  background: #FFFFFF;
+  .date-area {
+    position: relative;
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 68px;
+    .date {
+      padding: 0 45px;
+      color: #333333;
+      font-size: 30px;
+    }
+    .icon {
+      width: 30px;
+      height: 30px;
+
+      &.icon-left-arrow {
+        >img {
+          width: 30px;
+        }
+      }
+      &.icon-right-arrow {
+        >img {
+          width: 28px;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .btn-today {
+      position: absolute;
+      right: 0;
+      width:60px;
+      height:40px;
+      line-height: 40px;
+      padding-left: 10px;
+      border: 1px solid #D40001; /*no*/
+      border-right: none;
+      border-radius:20px 0px 0px 20px;
+      color: #D40001;
+    }
+
+  }
+  .weekday-area {
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: space-around;
+    .weekday-item {
+      color: #666666;
+      font-size: 24px;
+    }
+  }
+  .days-area {
+    .row {
+      display: flex;
+      flex-flow: nowrap;
+      justify-content: space-around;
+      color: #333333;
+      .day-item {
+
+        &.is-today {
+          background:rgba(212,0,1,1);
+          border-radius:50px;
+          color: #FFFFFF !important;
+          .event-circle {
+            background: #FFF !important;
+          }
+        }
+        &.is-weekend {
+          color: #999999;
+        }
+        &.selected {
+          border-radius:50px;
+          border:2px solid rgba(212,0,1,1);
+          color: #333333;
+        }
+        .day-item-content {
+          .solar-text {
+            font-size: 32px;
+            line-height: 32px;
+          }
+          .lunar-text {
+            margin-top: 1px; /*no*/
+            font-size: 20px;
+          }
+          .holiday-text {
+            margin-top: 1px; /*no*/
+            font-size: 20px;
+            &::before {
+              content: '假';
+              position: absolute;
+              top: 0;
+              right: 0;
+              background:rgba(255,157,19,1);
+              width:24px;
+              height:24px;
+              line-height: 24px;
+              border-radius:50px;
+              font-size: 14px;
+              color: #FFF;
+              text-align: center;
+            }
+          }
+          .event-nums {
+            margin-top: 1px; /*no*/
+            .event-circle {
+              display: inline-block;
+              background:rgba(212,0,1,0.6);
+              width:8px;
+              height:8px;
+              border-radius:50px;
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .weekday-item, .day-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+  }
+}

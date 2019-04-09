@@ -1,0 +1,366 @@
+
+$iconList: [affiche, chance, legwork, notice, report, schedule, inner, outer];
+.home-component {
+  height: 100%;
+  position: relative;
+  .search-board {
+    font-size:30px;
+    font-weight:400;
+    .search-icon {
+      position: relative;
+      display: inline-block;
+      width: 0;
+      top: 0;
+      left: 259px;
+      font-size: 30px;
+      color: #BBBBBB;
+    }
+    .search-input {
+      width:690px;
+      height:56px;
+      margin: 16px 30px;
+      border: none;
+      border-radius: 28px;
+      line-height: 30px;
+      text-align: center;
+    }
+  }
+  .space-board {
+    height: 88px;
+    width: 100%;
+  }
+  .msg-board {
+    background: #FFF;
+    .msg-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      padding-right: 30px;
+      margin-left: 30px;
+      color: #666666;
+      font-size: 30px;
+      border-bottom: 1px solid #E6E6E6; /*no*/
+      .title {
+        margin-right: 6px;
+      }
+      .count {
+
+      }
+      .icon-gengduo {
+        color: #D0D0D0;
+        font-size: 44px;
+      }
+    }
+    .msg-nav-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+
+      @each $var in $iconList {
+        &.icon-#{$var} {
+          background: url(./images/icon-#{$var}-msg@2x.png) no-repeat;
+          background-size: 70px auto;
+          background-position: 30px center;
+        }
+      }
+
+      height: 98px;
+      padding: 0 30px 0 130px;
+      .first-row {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        margin-bottom: 12px;
+        .msg-type {
+          margin-right: 16px;
+          font-size: 30px;
+          color: #333333;
+        }
+        .msg-num {
+          display: inline-block;
+          background: #F4333C;
+          min-width: 32px;
+          height: 32px;
+          line-height: 32px;
+          padding: 0 8.5px;
+          border-radius: 16px;
+
+          font-size: 24px;
+          text-align: center;
+          color: #FFF;
+        }
+        .msg-time {
+          position: absolute;
+          right: 0;
+          color: #BDBDBD;
+          font-size: 20px;
+        }
+      }
+      .first-msg {
+        color: #999999;
+        font-size: 24px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+  .board {
+    background: #FFF;
+    margin-top: 16px;
+  }
+  .base-app-board {
+    background: #FFF;
+    .title {
+      padding-left: 30px;
+      .content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 54px;
+        border-bottom: 1px solid #E6E6E6; /*no*/
+        font-size: 24px;
+        color: #999999;
+        &::before {
+          display: block;
+          content: '';
+          background: #D40001;
+          width: 8px;
+          height: 24px;
+          border-radius: 4px;
+          margin-right: 16px;
+        }
+      }
+
+    }
+    .app-items {
+      .row {
+        display: flex;
+        justify-content: space-around;
+        .app-item {
+          width: 250px;
+          padding: 50px 0 36px 0;
+          text-align: center;
+          font-size: 28px;
+          color: #666666;
+          .item-title {
+            display: block;
+            font-size: 28px;
+            color: #666666;
+          }
+          @each $var in $iconList {
+            .icon {
+              display: inline-block;
+              width: 60px;
+              height: 60px;
+              margin-bottom: 25px;
+            }
+            .icon-#{$var} {
+              background: url(./images/icon-#{$var}@2x.png) no-repeat;
+              background-size: 60px auto;
+              background-position: center center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .today-schedule-board {
+    .schedule-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      padding-right: 30px;
+      margin-left: 30px;
+      color: #666666;
+      font-size: 30px;
+      border-bottom: 1px solid #E6E6E6; /*no*/
+      .title {
+        margin-right: 492px;
+      }
+      .count {
+
+      }
+      .icon-gengduo {
+        color: #D0D0D0;
+        font-size: 44px;
+      }
+    }
+    .schedule-items {
+      display: block;
+      &:hover {
+        background-color: #F5F5F5 !important;
+      }
+      .schedule-item {
+        position: relative;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        height: 120px;
+        padding: 0 30px 0 54px;
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 30px;
+          bottom: 0;
+          content: '';
+          background:linear-gradient(360deg,rgba(16,142,233,0.5) 0%,rgba(16,142,233,1) 100%);
+          width:4px;
+          height:68px;
+          border-radius:2px;
+          margin: auto;
+        }
+        .first-row {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          margin-bottom: 12px;
+          font-size: medium;
+          .schedule-title {
+            font-size: 30px;
+            color: #333333;
+          }
+          .time-range {
+            font-size: 20px;
+            color: #333333;
+          }
+
+        }
+        .schedule-desc {
+          color: #999999;
+          font-size: 26px;
+        }
+      }
+    }
+    .grey {
+      color: #BDBDBD;
+      &::before {
+        content: '';
+        background: #BDBDBD;
+      }
+      .first-row {
+        color: #BDBDBD;
+      }
+      .second-row {
+        color: #BDBDBD;
+      }
+    }
+  }
+  .bank-logo {
+    display: block;
+    width: 193px;
+    margin: 60px auto 130px auto;
+  }
+  .msg-nav-item, .app-item {
+    &.selected, &:hover {
+      background-color: #F5F5F5 !important;
+    }
+  }
+  .list-item{
+    padding:16px 0px 0px 30px;
+    background: #FFF;
+    .first-line {
+      display: flex;
+      align-items: center;
+      margin-right: 30px;
+      margin-bottom: 38px;
+      .left-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg,rgba(255,102,103,1) 0%,rgba(212,0,1,1) 100%);
+        border-radius: 50px;
+        opacity: 0.8012;
+        margin-right: 20px;
+        .company-logo {
+          color: #FFF;
+          font-size: 80px;
+          height: 80px;
+        }
+      }
+      .right-title {
+        width: 570px;
+        .customer-name {
+          display: flex;
+          align-items: center;
+          margin-bottom: 24px;
+          width: 570px;
+          .customer-title {
+            font-size: 30px;
+            font-weight: 400;
+            color: #333333;
+            margin-right: 10px;
+          }
+          .customer-id {
+            font-size: 28px;
+            font-weight: 400;
+            color: #666666;
+            margin-right: 74px;
+          }
+        }
+        .customer-tags {
+          display: flex;
+          align-items: center;
+          .business-status {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            color: #0076FF;
+            font-size: 24px;
+            padding: 0 12px 0 12px;
+            margin-right: 12px;
+            border: 1px solid rgba(0,118,255,0.5);
+            border-radius: 8px;
+            background: rgba(0,118,255,0.1);
+          }
+          .industry {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            color: #8F77FF;
+            font-size: 24px;
+            padding: 0 12px 0 12px;
+            margin-right: 12px;
+            border: 1px solid rgba(143,119,255,0.5);
+            border-radius: 8px;
+            background: rgba(143,119,255,0.1);
+          }
+        }
+      }
+
+    }
+    .second-line {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 120px;
+      padding: 0px 30px 30px 0px;
+      border-bottom: 1px solid #E6E6E6; /*no*/
+      .customer-msg {
+        display: inline-block;
+        padding-left: 20px;
+        border-left: 1px solid #E6E6E6; /*no*/
+        &:first-child {
+          padding-left: 0;
+          border: none;
+        }
+        .msg-content {
+          font-size: 28px;
+          font-weight: 400;
+          color: #333333;
+          margin-bottom: 12px;
+        }
+        .msg-title {
+          font-size: 28px;
+          font-weight: 400;
+          color: #BDBDBD;
+        }
+      }
+    }
+  }
+}

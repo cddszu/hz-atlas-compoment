@@ -1,0 +1,114 @@
+
+.mine-component {
+  height: 100%;
+  .mine-header {
+    background: url(./images/mine-head.svg);
+    background-size: 750px 400px;
+    width: 100%;
+    height: 400px;
+    .mine-head {
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+      padding-top: 170px;
+      .left-part {
+        display: inline-block;
+        background: url(./images/head@2x.png);
+        background-size: 110px;
+        width: 110px;
+        height: 110px;
+        margin-right: 26px;
+      }
+      .right-part {
+        display: inline-block;
+        .mine-name {
+          display: flex;
+          font-size: 50px;
+          font-weight: 500;
+          color: #FFF;
+          margin-bottom: 20px;
+        }
+        .mine-office {
+          display: flex;
+          font-size: 28px;
+          font-weight: 400;
+          color: #FFF;
+        }
+      }
+    }
+  }
+  .mine-container {
+    background-color: #F5F5F5;
+    .info-border {
+      margin-top: 16px;
+      .item {
+        display: flex;
+        align-items: center;
+        background-color: #FFF;
+        .left-part {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 104px;
+          .mine-icon  {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .mine-userno {
+            color: #3391FF;
+            font-size: 38px;
+            width: 38px;
+            height: 30px;
+          }
+          .mine-org {
+            color: #FFC040;
+            font-size: 34px;
+            width: 34px;
+            height: 34px;
+          }
+          .mine-email {
+            color: #35E3BC;
+            font-size: 38px;
+            width: 38px;
+            height: 30px;
+          }
+          .mine-phone {
+            color: #FF6368;
+            font-size: 38px;
+            width: 25px;
+            height: 38px;
+          }
+        }
+        .right-part {
+          display: inline-block;
+          border-bottom: 1px solid #E6E6E6;
+          width: 100%;
+          height: 100%;
+          padding: 19px 0;
+          .item-content {
+            display: flex;
+            font-size: 28px;
+            color: #333333;
+            margin-bottom: 10px;
+          }
+          .item-title {
+            display: flex;
+            font-size: 20px;
+            color: #999999;
+          }
+        }
+      }
+    }
+    .out-login {
+      background-color: #FFF;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 400;
+      color: #333333;
+      height: 96px;
+      line-height: 96px;
+      margin-top: 16px;
+    }
+  }
+}

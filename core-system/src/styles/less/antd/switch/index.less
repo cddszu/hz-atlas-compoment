@@ -1,0 +1,21 @@
+.am-switch.switch-item {
+  .checkbox {
+    width: 102px;
+    height: 62px;
+    border-radius: 62px;
+    &::before {
+      width: 96px;
+      height: 56px;
+      border-radius: 56px;
+    }
+    &::after {
+      width: 56px;
+      height: 56px;
+      border-radius: 56px;
+    }
+  }
+}
+.am-switch.switch-item input[type="checkbox"]:checked + .checkbox:after {
+  -webkit-transform: translateX(40px);
+  transform: translateX(40px);
+}

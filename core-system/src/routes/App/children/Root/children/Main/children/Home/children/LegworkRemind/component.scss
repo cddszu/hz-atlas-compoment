@@ -1,0 +1,55 @@
+.home-legworkRemind-component {
+  height: calc(100% - 86px);
+  overflow-y: auto;
+  background-color: #F5F5F5;
+  .legworkRemind-list {
+    background-color: #FFF;
+    .legworkRemind-item {
+      display: flex;
+      padding-left: 30px;
+      .left-part {
+        vertical-align: top;
+        padding-top: 28px;
+        .left-img {
+          display: inline-block;
+          width: 60px;
+          height: 60px;
+          background-position: center center;
+          background-size: 60px 60px;
+          background-image: url(../../images/normal_head@2x.png);
+        }
+      }
+      .right-part {
+        width: 100%;
+        margin-left: 20px;
+        padding: 30px 30px 30px 0;
+        border-bottom: 1px solid #E6E6E6;
+        .first-row {
+          display: flex;
+          justify-content: space-between;
+          color: #999;
+          .name {
+            font-size: 26px;
+          }
+          .time {
+            font-size: 24px;
+          }
+        }
+        .title {
+          margin: 24px 0;
+          font-size: 30px;
+          color: #333;
+        }
+        .location {
+          .icon-waiqindingwei {
+            font-size: 24px;
+            color: #D1D1D1;
+            margin-right: 4px;
+          }
+          font-size: 24px;
+          color: #666;
+        }
+      }
+    }
+  }
+}

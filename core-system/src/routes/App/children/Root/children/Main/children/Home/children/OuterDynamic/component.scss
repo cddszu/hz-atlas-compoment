@@ -1,0 +1,31 @@
+.home-outerDynamic-component {
+  height: calc(100% - 86px);
+  overflow-y: auto;
+  background-color: #F5F5F5;
+  .outerDynamic-list {
+    background-color: #FFF;
+    .outerDynamic-item {
+      .content {
+        padding: 30px;
+        background-color: #fff;
+        .title {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 24px;
+          color: #333;
+          .msgTitle {
+            max-width: 520px;
+            font-size: 30px;
+          }
+          .msgTime {
+            font-size: 24px;
+          }
+        }
+        .second-row {
+          font-size: 26px;
+          color: #999;
+        }
+      }
+    }
+  }
+}

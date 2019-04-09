@@ -1,0 +1,32 @@
+/* == clearfix == */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+@function funFixRem($val) {
+  @return $val/108;
+}

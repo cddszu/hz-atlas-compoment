@@ -1,0 +1,88 @@
+
+.contact-list-component {
+  height: calc(100% - 88px);
+  overflow-y: auto;
+  background-color: #F5F5F5;
+  padding: 16px 0;
+  .border {
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.11);
+    border-radius: 24px;
+    padding-left: 30px;
+    margin: 0 30px 16px 30px;
+    .border-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      width: 100%;
+      padding-right: 30px;
+      border-bottom: 1px solid #E6E6E6; /*no*/
+      .head-left {
+        display: flex;
+        align-items: center;
+        .customer-logo {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 58px;
+          height: 58px;
+          margin-right: 20px;
+          background-color: #FAE5E5;
+          border-radius: 29px;
+          i {
+            font-size: 44px;
+            color: #D40001;
+          }
+        }
+        .head-title {
+          font-size: 34px;
+          font-weight: 400;
+          color: #333333;
+          margin-right: 20px;
+        }
+        .customer-tag {
+          font-size: 22px;
+          font-weight: 400;
+          color: #8ED844;
+          padding: 6px 10px;
+          background-color: rgba(142,216,68,0.1);
+          border: 1px solid #8ED844; /*no*/
+        }
+      }
+      .head-right {
+        font-size: 44px;
+        color: #D0D0D0;
+        i {
+          font-size: 44px;
+          color: #D0D0D0;
+        }
+      }
+    }
+    .border-content {
+      padding-top: 30px;
+      .border-item {
+        display: inline-block;
+        width: 50%;
+        margin-bottom: 30px;
+        &:nth-child(even) {
+          padding-left: 29px;
+          border-left: 1px solid #E6E6E6; /*no*/
+        }
+        .item-title {
+          line-height: 26px;
+          font-size: 26px;
+          font-weight: 400;
+          color: #999999;
+        }
+        .item-content {
+          line-height: 28px;
+          font-size: 28px;
+          font-weight: 400;
+          color: #333333;
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
