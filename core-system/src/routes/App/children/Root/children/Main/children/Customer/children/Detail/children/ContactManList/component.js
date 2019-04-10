@@ -3,7 +3,7 @@ import './component.scss'
 import PaginationList from 'components/PaginationList'
 import { SwipeAction } from 'antd-mobile'
 import ContactDetail from './children/contactDetail'
-import InnerPage from 'components/hz/InnerPage'
+import { InnerPage } from 'components/lib'
 
 class contactList extends React.Component {
   constructor(props) {

@@ -3,10 +3,10 @@ import './component.scss'
 import { Modal } from 'antd-mobile'
 import {Link} from 'react-router-dom'
 // import { Tabs } from 'antd-mobile'
-import Calendar from 'components/hz/Calendar'
+import { Calendar } from 'components/lib'
 import NO_DATA_IMG from './images/icon-no-data@2x.png'
 import { formatMsgDate } from 'utils/timeFormat'
-import GoBack from 'components/hz/GoBack'
+import { GoBack } from 'components/lib'
 
 class Home extends React.Component {
   constructor(props) {

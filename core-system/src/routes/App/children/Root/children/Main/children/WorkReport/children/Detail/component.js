@@ -3,8 +3,8 @@ import './component.scss'
 import CustomerList from 'components/CustomerList'
 import { SwipeAction, Modal } from 'antd-mobile'
 import creatHistory from 'history/createBrowserHistory'
-import GoBack from 'components/hz/GoBack'
-import FadePage from 'components/hz/FadePage'
+import { GoBack } from 'components/lib'
+import { FadePage } from 'components/lib'
 
 const history = creatHistory();
 const alert = Modal.alert

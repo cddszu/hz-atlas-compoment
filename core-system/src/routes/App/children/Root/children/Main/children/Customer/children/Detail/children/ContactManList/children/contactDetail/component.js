@@ -1,6 +1,6 @@
 import React from 'react'
 import './component.scss'
-import CreateItem from 'components/hz/CreateItem'
+import { CreateItem } from 'components/lib'
 
 class contactDetail extends React.Component {
   componentDidMount() {

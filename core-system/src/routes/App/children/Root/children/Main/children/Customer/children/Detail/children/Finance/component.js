@@ -2,7 +2,7 @@ import React from "react";
 import "./component.scss";
 import PaginationList from "components/PaginationList";
 import { SwipeAction } from "antd-mobile";
-import InnerPage from "components/hz/InnerPage";
+import { InnerPage } from "components/lib"
 import icon_info from "../../images/基本信息 copy@2x.png";
 import Detail from "./children/component";
 

@@ -1,0 +1,4 @@
+{
+  // 需要react-scripts
+  "presets": ["react-app"]
+}

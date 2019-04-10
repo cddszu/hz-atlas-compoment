@@ -2,13 +2,13 @@ import React from 'react'
 import './component.scss'
 import { Link } from 'react-router-dom'
 import { DatePicker } from 'antd-mobile'
-import CreateItem from 'components/hz/CreateItem'
-import FadePage from 'components/hz/FadePage'
+import { CreateItem } from 'components/lib'
+import { FadePage } from 'components/lib'
 import RelateSchedule from 'components/RelateSchedule'
 import creatHistory from 'history/createBrowserHistory'
 import InstitutionTree from 'components/InstitutionTree'
-import InnerPage from 'components/hz/InnerPage'
-import ReturnHeader from 'components/hz/ReturnHeader'
+import { InnerPage } from 'components/lib'
+import { ReturnHeader } from 'components/lib'
 const history = creatHistory();
 class FollowBusiness extends React.Component {
   constructor(props) {

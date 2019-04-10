@@ -5,11 +5,11 @@ import AuthRouter from 'components/AuthRouter'
 import { DatePicker } from 'antd-mobile'
 import PaginationList from 'components/PaginationList'
 import SearchPage from 'components/SearchPage'
-import GoBack from 'components/hz/GoBack'
-import FadePage from 'components/hz/FadePage'
-import CreateItem from 'components/hz/CreateItem'
+import { GoBack } from 'components/lib'
+import { FadePage } from 'components/lib'
+import { CreateItem } from 'components/lib'
 import InstitutionTree from 'components/InstitutionTree'
-import InnerPage from 'components/hz/InnerPage'
+import { InnerPage } from 'components/lib'
 
 
 // 外勤模块头部选择

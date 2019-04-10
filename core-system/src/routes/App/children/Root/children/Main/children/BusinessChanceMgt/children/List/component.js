@@ -5,8 +5,8 @@ import SearchPage from 'components/SearchPage'
 import { SwipeAction, Modal } from 'antd-mobile'
 import RelateSchedule from 'components/RelateSchedule'
 // import { Tabs } from 'antd-mobile'
-import Tabs from 'components/hz/Tabs'
-import { white } from 'ansi-colors';
+import { Tabs } from 'components/lib'
+import { white } from 'ansi-colors'
 import creatHistory from 'history/createBrowserHistory'
 
 const history = creatHistory();

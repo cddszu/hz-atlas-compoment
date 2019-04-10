@@ -1,0 +1,175 @@
+
+.relate-customer-component {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  height: 100%;
+  .select-customer {
+    height: 100%;
+    .select-customer-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFF;
+      height: 86px;
+      line-height: 86px;
+      width: 100%;
+      font-weight: 400;
+      .select-cancel {
+        padding-left: 30px;
+        font-size: 40px;
+      }
+      .select-title {
+        font-size: 36px;
+        color: #333333;
+        font-weight: 500;
+      }
+      .select-confirm {
+        color: #D40001;
+        font-size: 32px;
+        padding-right: 30px;
+      }
+    }
+    .select-customer-container {
+      width: 100%;
+      height: calc(100% - 86px);
+      overflow-y: auto;
+      background-color: #F5F5F5;
+      margin-bottom: 16px;
+      .search-board {
+        font-size:30px;
+        font-weight:400;
+        .attach {
+          position: absolute;
+          top: 115px;
+          left: 54px;
+          .search-icon {
+            width: 30px;
+            height: 30px;
+            color: #BBBBBB;
+            font-size: 30px;
+          }
+        }
+        .search-input {
+          width:690px;
+          height:56px;
+          margin: 16px 30px;
+          padding-left: 66px;
+          border: none;
+          border-radius: 28px;
+          line-height: 30px;
+          text-align: left;
+        }
+      }
+      .select-item {
+        color: #666666;
+        background: #FFF;
+        .item-icon {
+
+          .item-icon-normal {
+            float: left;
+            margin-left: 30px;
+            margin-top: 48px;
+            font-size: 44px;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            color: #CCCCCC;
+          }
+          .item-icon-active {
+            display: none;
+            float: left;
+            margin-left: 30px;
+            margin-top: 48px;
+            font-size: 44px;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            color: #108EE9;;
+          }
+        }
+        .item-right {
+          padding: 20px 10px 20px 0;
+          margin-left: 94px;
+          border-bottom: 1px solid #E6E6E6;
+          .item-content {
+            display: flex;
+            align-items: center;
+            .item-logo {
+              display: inline-block;
+              width: 100px;
+              height: 100px;
+              text-align: center;
+              line-height: 100px;
+              background: linear-gradient(135deg,rgba(255,102,103,1) 0%,rgba(212,0,1,1) 100%);
+              border-radius: 50px;
+              opacity: 0.8012;
+              margin-right: 20px;
+              .company-logo {
+                font-size: 80px;
+                color: #FFF;
+              }
+            }
+            .item-msg {
+              display: inline-block;
+              .first-line {
+                display: flex;
+                margin-bottom: 24px;
+                .company-name {
+                  font-size: 30px;
+                  font-weight: 400;
+                  color: #333333;
+                  margin-right: 10px;
+                }
+                .company-id {
+                  font-size: 28px;
+                  font-weight: 400;
+                  color: #666666;
+                }
+              }
+              .second-line {
+                display: flex;
+                .tag {
+                  display: inline-block;
+                  height: 40px;
+                  line-height: 40px;
+                  color: #0076FF;
+                  font-size: 24px;
+                  padding: 0 12px 0 12px;
+                  margin-right: 12px;
+                  border: 1px solid rgba(0,118,255,0.5);
+                  border-radius: 8px;
+                  background: rgba(0,118,255,0.1);
+                }
+                .customerState {
+                  color: #50BC4E;
+                  background: rgba(80,188,78,0.1);
+                  border: 1px solid rgba(80,188,78,0.5)
+                }
+                .industry {
+                  color: #8F77FF;
+                  background: rgba(143,119,255,0.1);
+                  border: 1px solid rgba(143,119,255,0.5);
+                }
+              }
+            }
+          }
+        }
+        &:last-child {
+          border: none;
+        }
+        &:hover {
+          .item-icon-normal {
+            display: none;
+          }
+          .item-icon-active {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './component.scss'
 import PaginationList from 'components/PaginationList'
 import SearchPage from 'components/SearchPage'
-import Tabs from 'components/hz/Tabs'
+import { Tabs } from 'components/lib'
 import { DatePicker, SwipeAction } from 'antd-mobile'
 
 class HeadTitle extends Component {

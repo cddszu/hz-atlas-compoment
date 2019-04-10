@@ -1,7 +1,7 @@
 import React from 'react'
 import './component.scss'
 import { Link } from 'react-router-dom'
-import FadePage from 'components/hz/FadePage'
+import { FadePage } from 'components/lib'
 import { SwipeAction, Modal } from 'antd-mobile'
 import PaginationList from 'components/PaginationList'
 import creatHistory from 'history/createBrowserHistory'

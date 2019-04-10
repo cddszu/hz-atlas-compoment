@@ -1,10 +1,10 @@
 import React from 'react'
 import './component.scss'
 import { SwipeAction, Modal } from 'antd-mobile'
-import GoBack from 'components/hz/GoBack'
+import { GoBack } from 'components/lib'
 import { formatMsgDate } from 'utils/timeFormat'
-import FadePage from 'components/hz/FadePage'
-import TogglePage from 'components/hz/TogglePage'
+import { FadePage } from 'components/lib'
+import { TogglePage } from 'components/lib'
 
 const alert = Modal.alert
 

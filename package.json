@@ -1,0 +1,18 @@
+{
+  "name": "hz-react-mobile",
+  "version": "0.0.3",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": ["dist"],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "react-scripts": "1.1.4"
+  },
+  "peerDependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "scripts": {
+    "build": "rm -rf dist && NODE_ENV=production babel core-system/src/components/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import './component.scss'
-import GoBack from 'components/hz/GoBack'
+import { GoBack } from 'components/lib'
 import SearchPage from 'components/SearchPage'
 
 const tabsTitle = [

@@ -1,7 +1,7 @@
 import React from 'react'
 import './component.scss'
 import { Link } from 'react-router-dom'
-import CreateItem from 'components/hz/CreateItem'
+import { CreateItem } from 'components/lib'
 
 class Create extends React.Component {
   constructor(props) {

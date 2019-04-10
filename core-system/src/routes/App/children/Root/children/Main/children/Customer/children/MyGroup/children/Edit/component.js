@@ -2,7 +2,7 @@ import React from 'react'
 import './component.scss'
 import { Link } from 'react-router-dom'
 import { DatePicker, Switch } from 'antd-mobile'
-import CreateItem from 'components/hz/CreateItem'
+import { CreateItem } from 'components/lib'
 
 class Edit extends React.Component {
   constructor(props) {

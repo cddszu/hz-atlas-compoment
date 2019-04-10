@@ -1,0 +1,164 @@
+
+.relate-schedule-component {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  height: 100%;
+  .select-schedule {
+    height: 100%;
+    .select-schedule-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFF;
+      height: 86px;
+      line-height: 86px;
+      width: 100%;
+      font-weight: 400;
+      .select-cancel {
+        padding-left: 30px;
+        font-size: 40px;
+      }
+      .select-title {
+        font-size: 36px;
+        color: #333333;
+        font-weight: 500;
+      }
+      .select-confirm {
+        color: #D40001;
+        font-size: 32px;
+        padding-right: 30px;
+      }
+    }
+    .select-schedule-container {
+      width: 100%;
+      height: calc(100% - 86px);
+      overflow-y: auto;
+      background-color: #F5F5F5;
+      margin-bottom: 16px;
+      .search-board {
+        font-size:30px;
+        font-weight:400;
+        .attach {
+          position: absolute;
+          top: 115px;
+          left: 54px;
+          .search-icon {
+            width: 30px;
+            height: 30px;
+            color: #BBBBBB;
+            font-size: 30px;
+          }
+        }
+        .search-input {
+          width:690px;
+          height:56px;
+          margin: 16px 30px;
+          padding-left: 66px;
+          border: none;
+          border-radius: 28px;
+          line-height: 30px;
+          text-align: left;
+        }
+      }
+      .select-items {
+        .time-board {
+          color: #333333;
+          font-size: 24px;
+          font-weight: 400px;
+          margin: 24px 0 24px 30px;
+        }
+        .select-item {
+          color: #666666;
+          background: #FFF;
+          height: 154px;
+          .item-icon {
+
+            .item-icon-normal {
+              float: left;
+              margin-left: 30px;
+              margin-top: 56px;
+              font-size: 44px;
+              width: 44px;
+              height: 44px;
+              line-height: 44px;
+              color: #CCCCCC;
+            }
+            .item-icon-active {
+              display: none;
+              float: left;
+              margin-left: 30px;
+              margin-top: 56px;
+              font-size: 44px;
+              width: 44px;
+              height: 44px;
+              line-height: 44px;
+              color: #108EE9;;
+            }
+          }
+          .item-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: right;
+            margin-left: 20px;
+            padding-right: 30px;
+            height: inherit;
+            width: 656px;
+            border-bottom: 1px solid #E6E6E6;  /*no*/
+            .item-content {
+              display: inline-block;
+              width: inherit;
+              .item-top {
+                color: #333333;
+                overflow: hidden;
+                .item-name {
+                  float: left;
+                  font-size: 30px;
+                }
+                .item-time {
+                  float: right;
+                  font-size: 24px;
+                }
+              }
+              .item-bottom {
+                margin-top: 24px;
+                .item-tag {
+                  display: block;
+                  background:rgba(255,97,97,0.1);
+                  padding: 8px 12px;
+                  font-size: 24px;
+                  width: max-content;
+                  height: 40px;
+                  border:1px solid rgba(255,97,97,0.5);  /*no*/
+                  border-radius:8px;
+                  color: #FF6161;
+                }
+              }
+            }
+          }
+          &:last-child {
+            border: none;
+          }
+          &:hover {
+            .item-icon-normal {
+              display: none;
+            }
+            .item-icon-active {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}

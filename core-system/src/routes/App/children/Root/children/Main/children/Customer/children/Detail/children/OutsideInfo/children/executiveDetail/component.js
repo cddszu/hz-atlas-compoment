@@ -1,6 +1,6 @@
 import React from 'react'
 import './component.scss'
-import CreateItem from 'components/hz/CreateItem'
+import { CreateItem } from 'components/lib'
 
 class ExecutiveDetail extends React.Component {
   componentDidMount() {

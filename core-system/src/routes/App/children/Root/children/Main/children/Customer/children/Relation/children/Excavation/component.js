@@ -2,8 +2,8 @@ import React from 'react'
 import './component.scss'
 import { BrowserRouter as Router, Route, Switch, withRouter , HashRouter, Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import LandscapePage from 'components/hz/LandscapePage'
-import Tabs from 'components/hz/Tabs'
+import { LandscapePage } from 'components/lib'
+import { Tabs } from 'components/lib'
 import { Force, Tree } from "star-graph"
 
 const tabs = [

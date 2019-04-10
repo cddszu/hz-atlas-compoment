@@ -1,6 +1,6 @@
 import React from 'react'
 import './component.scss'
-import GoBack from 'components/hz/GoBack'
+import { GoBack } from 'components/lib'
 import { getQueryObj } from 'utils/url.js'
 
 class MsgDetail extends React.Component {

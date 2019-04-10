@@ -9,6 +9,7 @@
     "cookie-parser": "^1.4.4",
     "d3": "^5.7.0",
     "es6-promise": "^4.2.5",
+    "hz-react-mobile": "^0.0.3",
     "is-plain-object": "^2.0.4",
     "iscroll": "^5.2.0",
     "js-md5": "^0.7.3",

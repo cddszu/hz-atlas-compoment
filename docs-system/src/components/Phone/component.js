@@ -16,8 +16,8 @@ class Phone extends React.Component {
 
   render() {
     return (
-      <div className='phone-component'>
-        <iframe src="http://localhost:3002" frameborder="0" scrolling="no"></iframe>
+      <div className='phone-component' draggable>
+        <iframe src="http://localhost:3001/#/root/main/chanceMgt/" frameborder="0" scrolling="no"></iframe>
       </div>
     )
   }

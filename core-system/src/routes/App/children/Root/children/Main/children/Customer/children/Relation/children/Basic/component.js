@@ -2,9 +2,9 @@ import React from 'react'
 import './component.scss'
 import { BrowserRouter as Router, Route, Switch, withRouter , HashRouter, Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import LandscapePage from 'components/hz/LandscapePage'
+import { LandscapePage } from 'components/lib'
 import { px2rem } from 'utils'
-import Tabs from 'components/hz/Tabs'
+import { Tabs } from 'components/lib'
 import { Force, Tree, Structure, Utils } from "star-graph"
 import TabHeader from '../TabHeader'
 

@@ -2,14 +2,14 @@ import React from 'react'
 import './component.scss'
 import { Link } from 'react-router-dom'
 import { DatePicker, Switch } from 'antd-mobile'
-import CreateItem from 'components/hz/CreateItem'
-import FadePage from 'components/hz/FadePage'
+import { CreateItem } from 'components/lib'
+import { FadePage } from 'components/lib'
 import RelateCustomer from 'components/RelateCustomer'
 import RelateBusiness from 'components/RelateBusiness'
 import RelateSchedule from 'components/RelateSchedule'
-import InnerPage from 'components/hz/InnerPage'
+import { InnerPage } from 'components/lib'
 import InstitutionTree from 'components/InstitutionTree'
-import GoBack from 'components/hz/GoBack'
+import { GoBack } from 'components/lib'
 
 class Create extends React.Component {
   constructor(props) {

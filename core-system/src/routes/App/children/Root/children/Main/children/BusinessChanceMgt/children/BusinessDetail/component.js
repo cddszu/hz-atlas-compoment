@@ -4,8 +4,8 @@ import CustomerList from 'components/CustomerList'
 import { SwipeAction, Modal } from 'antd-mobile'
 import FollowBusiness from './children/FollowBusiness'
 import creatHistory from 'history/createBrowserHistory'
-import ReturnHeader from 'components/hz/ReturnHeader'
-import TogglePage from 'components/hz/TogglePage'
+import { ReturnHeader } from 'components/lib'
+import { TogglePage } from 'components/lib'
 
 const history = creatHistory();
 class BusinessDetail extends React.Component {

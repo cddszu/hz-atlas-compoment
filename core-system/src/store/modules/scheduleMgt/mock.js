@@ -1,0 +1,330 @@
+module.exports = function(router) {
+  router.post('/mock/crm-jj/api/scheduler/querySchedulerTodayList', function(req, res, next) {
+    res.json(
+      {
+        "success": true,
+        "payload": {
+            "2019-02-13": [{
+                "id": 44317,
+                "enabledFlag": "0",
+                "createdDt": "2018-12-19 18:08:58",
+                "updatedDt": "2018-12-19 18:08:58",
+                "createdById": "1",
+                "createdBy": "admin",
+                "updateById": "1",
+                "updateBy": "admin",
+                "schedulerNo": "1111",
+                "topic": "带走我",
+                "startDt": "2018-12-20 00:30",
+                "endDt": "2019-01-16 18:00",
+                "address": "一个人自传的寂寞1",
+                "remark": "就算我的爱你的自由都将成为泡沫",
+                "schedulerRemind": "1",
+                "remindDt": "2019-01-08 17:23",
+                "remindSwitch": "1",
+                "businessChanceResultVo": null,
+                "companyVo": null
+            }, {
+                "id": 52908,
+                "enabledFlag": "0",
+                "createdDt": "2019-01-05 11:05:45",
+                "updatedDt": "2019-01-05 16:26:35",
+                "createdById": "1",
+                "createdBy": "admin",
+                "updateById": "1",
+                "updateBy": "admin",
+                "schedulerNo": "1111",
+                "topic": "山海",
+                "startDt": "2019-01-08 08:00",
+                "endDt": "2019-01-08 23:17",
+                "address": "山里大海",
+                "remark": "华晨宇、、",
+                "schedulerRemind": "1",
+                "remindDt": "2019-01-08 20:20",
+                "remindSwitch": "1",
+                "businessChanceResultVo": null,
+                "companyVo": null
+            }]
+        }
+      }
+    )
+  })
+
+  router.post('/mock/crm-jj/api/scheduler/querySchedulerByDate', (req, res, next) => {
+    res.json(
+      {
+        "success":true,
+        "payload":{
+          "2019-03-11":[
+            {
+              "id":90015,
+              "enabledFlag":"0",
+              "createdDt":"2019-03-08 18:19:39",
+              "updatedDt":"2019-03-08 18:19:39",
+              "createdById":"84994",
+              "createdBy":"admin",
+              "updateById":"84994",
+              "updateBy":"admin",
+              "schedulerNo":"1111",
+              "topic":"这是一个日程2",
+              "startDt":"2019-03-11 08:00",
+              "endDt":"2019-03-11 18:00",
+              "address":"阿斯顿发撒的吧",
+              "remark":"啊舒服的阿斯顿发过的不舒服过",
+              "schedulerRemind":"1",
+              "remindDt":"2019-03-11 07:30",
+              "remindSwitch":"1",
+              "businessChanceResultVo":null,
+              "companyVo":{
+                "id":null,
+                "objectKey":null,
+                "companyName":null,
+                "businessScope":null,
+                "organizationNumber":null,
+                "companyLogo":null,
+                "legalPerson":null,
+                "registeredCapital":null,
+                "registrationDate":null,
+                "operatingDate":null,
+                "operatingState":null,
+                "subordinateIndustry":null,
+                "industryCategories":null,
+                "employeesCount":null,
+                "associatedAccount":null,
+                "managementPersonnelNo":null,
+                "managementPersonnelName":null,
+                "organizationNo":null,
+                "organizationName":null,
+                "organizationMap":null,
+                "companyAddress":null,
+                "targetState":null,
+                "claimDt":null,
+                "followDt":null,
+                "cooperationYear":null,
+                "isInside":null,
+                "companyNo":null,
+                "depositAmount":null,
+                "loanBalance":null,
+                "assetsAmount":null,
+                "contribution":null,
+                "creditCode":null,
+                "yearAverageDaily":null,
+                "claimUserId":null,
+                "claimUserName":null,
+                "recommendType":null
+              }
+            }],
+          "2019-03-14":[
+            {
+              "id":90976,
+              "enabledFlag":"1",
+              "createdDt":"2019-03-12 10:47:52",
+              "updatedDt":"2019-03-12 10:55:57",
+              "createdById":"84994",
+              "createdBy":"admin",
+              "updateById":"84994",
+              "updateBy":"admin",
+              "schedulerNo":"1111",
+              "topic":"这是一个日程4",
+              "startDt":"2019-03-15 08:00",
+              "endDt":"2019-03-15 18:00",
+              "address":"日程地点",
+              "remark":"日程描述",
+              "schedulerRemind":"1",
+              "remindDt":"2019-03-14 07:30",
+              "remindSwitch":"1",
+              "businessChanceResultVo":null,
+              "companyVo":{
+                "id":null,
+                "objectKey":null,
+                "companyName":null,
+                "businessScope":null,
+                "organizationNumber":null,
+                "companyLogo":null,
+                "legalPerson":null,
+                "registeredCapital":null,
+                "registrationDate":null,
+                "operatingDate":null,
+                "operatingState":null,
+                "subordinateIndustry":null,
+                "industryCategories":null,
+                "employeesCount":null,
+                "associatedAccount":null,
+                "managementPersonnelNo":null,
+                "managementPersonnelName":null,
+                "organizationNo":null,
+                "organizationName":null,
+                "organizationMap":null,
+                "companyAddress":null,
+                "targetState":null,
+                "claimDt":null,
+                "followDt":null,
+                "cooperationYear":null,
+                "isInside":null,
+                "companyNo":null,
+                "depositAmount":null,
+                "loanBalance":null,
+                "assetsAmount":null,
+                "contribution":null,
+                "creditCode":null,
+                "yearAverageDaily":null,
+                "claimUserId":null,
+                "claimUserName":null,
+                "recommendType":null
+              }
+            }],
+          "2019-03-08":[
+            {
+              "id":90013,
+              "enabledFlag":"0",
+              "createdDt":"2019-03-08 18:18:57",
+              "updatedDt":"2019-03-08 18:18:57",
+              "createdById":"84994",
+              "createdBy":"admin",
+              "updateById":"84994",
+              "updateBy":"admin",
+              "schedulerNo":"1111",
+              "topic":"这是一个日程1",
+              "startDt":"2019-03-09 10:45",
+              "endDt":"2019-03-09 12:15",
+              "address":"雷军阿迪舒服",
+              "remark":"阿迪舒服快乐就是的阿斯顿发",
+              "schedulerRemind":"1",
+              "remindDt":"2019-03-08 23:45",
+              "remindSwitch":"1",
+              "businessChanceResultVo":null,
+              "companyVo":{
+                "id":null,
+                "objectKey":null,
+                "companyName":null,
+                "businessScope":null,
+                "organizationNumber":null,
+                "companyLogo":null,
+                "legalPerson":null,
+                "registeredCapital":null,
+                "registrationDate":null,
+                "operatingDate":null,
+                "operatingState":null,
+                "subordinateIndustry":null,
+                "industryCategories":null,
+                "employeesCount":null,
+                "associatedAccount":null,
+                "managementPersonnelNo":null,
+                "managementPersonnelName":null,
+                "organizationNo":null,
+                "organizationName":null,
+                "organizationMap":null,
+                "companyAddress":null,
+                "targetState":null,
+                "claimDt":null,
+                "followDt":null,
+                "cooperationYear":null,
+                "isInside":null,
+                "companyNo":null,
+                "depositAmount":null,
+                "loanBalance":null,
+                "assetsAmount":null,
+                "contribution":null,
+                "creditCode":null,
+                "yearAverageDaily":null,
+                "claimUserId":null,
+                "claimUserName":null,
+                "recommendType":null
+              }
+            }],
+          "2019-03-09":[
+            {
+              "id":90017,
+              "enabledFlag":"0",
+              "createdDt":"2019-03-08 18:20:09",
+              "updatedDt":"2019-03-08 18:20:09",
+              "createdById":"84994",
+              "createdBy":"admin",
+              "updateById":"84994",
+              "updateBy":"admin",
+              "schedulerNo":"1111",
+              "topic":"这是一个日程3",
+              "startDt":"2019-03-09 08:00",
+              "endDt":"2019-03-09 18:00",
+              "address":"阿斯顿发撒的",
+              "remark":"阿斯顿发生的范德萨的",
+              "schedulerRemind":"1",
+              "remindDt":"2019-03-09 07:30",
+              "remindSwitch":"1",
+              "businessChanceResultVo":null,
+              "companyVo":null
+            }]
+        }
+      }
+
+
+    )
+  })
+
+  router.get('/mock/crm-jj/api/message/detail', function (req, res, next) {
+    // req.json({"id": 6}) 行外动态消息
+    // res.json({
+    //   "success": true,
+    //   "payload": {
+    //     "company_type": "行内",
+    //     "msgCategoryType": "W16",
+    //     "orgName": "全行",
+    //     "handleTime": "2019-01-17",
+    //     "object_key": "201811300103",
+    //     "userNo": "001",
+    //     "company_key": "523af537946b79c4f8369ed39ba78605",
+    //     "type": "3",
+    //     "_score": 6.700775,
+    //     "userName": "admin",
+    //     "content": "开头：投融资信息/n开头二：时空裂缝健身房据了解逢狼时刻积分/n开头收水电费第三方三：slkfjslfjslfkjsfnknvkxn/n",
+    //     "ramark": "admin,kaka",
+    //     "pushDt": "2018-11-30",
+    //     "messageStatus": "未处理",
+    //     "_schema": "es_xxtx_outer_event_info",
+    //     "orgNo": "000000",
+    //     "msgTitle": "客户涉黑标题",
+    //     "company_name": "公司中文名称",
+    //     "cust_no": "001",
+    //     "name": "客户涉黑标题",
+    //     "time": "2019-01-15",
+    //     "_id": "201811300103",
+    //     "org_no": "000000",
+    //     "msgCategoryName": "客户涉黑"
+    //   }
+    // })
+
+    // req.json({"id": 139}) 行内动态消息
+    // res.json({
+    //   "success": true,
+    //   "payload": {
+    //     "data_dt": "2019-01-16",
+    //     "msgCategoryType": "Z10",
+    //     "product": "sdfsf",
+    //     "orgName": "全行",
+    //     "handleTime": "2019-01-29",
+    //     "object_key": "001",
+    //     "userNo": "001",
+    //     "_score": 3.4273396,
+    //     "userName": "admin",
+    //     "ramark": null,
+    //     "pushDt": "2019-01-16",
+    //     "messageStatus": "已处理",
+    //     "_schema": "es_xxtx_in_evt_acct_chng",
+    //     "orgNo": "000000",
+    //     "msgTitle": "账户异常变动",
+    //     "cust_no": "001",
+    //     "cust_name": "",
+    //     "_id": "001",
+    //     "bef_status": "1",
+    //     "aft_status": "2",
+    //     "event_time": "2019-01-16",
+    //     "account": "1111",
+    //     "msgCategoryName": "账户异常变动"
+    //   }
+    // })
+  })
+
+
+}
+
+

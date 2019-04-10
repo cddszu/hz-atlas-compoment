@@ -1,6 +1,6 @@
 import React from 'react'
 import './component.scss'
-import GoBack from 'components/hz/GoBack'
+import { GoBack } from 'components/lib'
 
 function TabHeader(props) {
   return (

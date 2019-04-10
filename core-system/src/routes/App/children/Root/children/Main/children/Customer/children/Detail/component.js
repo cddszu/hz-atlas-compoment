@@ -18,7 +18,7 @@ import icon_zhangwu from "./images/账户总览@2x.png";
 import icon_rongzilei from "./images/融资类业务@2x.png";
 import icon_qianyue from "./images/签约业务@2x.png";
 // 内页
-import InnerPage from "components/hz/InnerPage";
+import { InnerPage } from "components/lib"
 import CustomerView from "./children/CustomerOverview";
 import CompanyInfo from "./children/CompanyMsg";
 import OutsideMsg from "./children/OutsideInfo";

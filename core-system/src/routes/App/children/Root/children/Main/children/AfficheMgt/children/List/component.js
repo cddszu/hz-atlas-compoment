@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 // import AuthRouter from 'components/AuthRouter'
 import PaginationList from 'components/PaginationList'
 import SearchPage from 'components/SearchPage'
-import Tabs from 'components/hz/Tabs'
+import { Tabs } from 'components/lib'
 import creatHistory from 'history/createBrowserHistory'
-import GoBack from 'components/hz/GoBack'
+import { GoBack } from 'components/lib'
 import { formatMsgDate } from 'utils/timeFormat'
 
 const history = creatHistory();
