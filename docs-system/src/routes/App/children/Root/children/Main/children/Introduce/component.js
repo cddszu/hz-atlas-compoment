@@ -1,5 +1,7 @@
 import React from 'react'
 import './component.scss'
+import ReactMarkdown from 'react-markdown'
+import  mdPth from './button.md'
 class Home extends React.Component {
 
   constructor(props) {
@@ -10,6 +12,9 @@ class Home extends React.Component {
   }
 
   componentWillMount() {
+    fetch(mdPth).then((response) => response.text()).then((text) => {
+      this.setState({ terms: text })
+    })
   }
 
   componentDidMount() {
@@ -18,6 +23,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className='home-component'>
+        <ReactMarkdown className='markdown' source={ this.state.terms }   escapeHtml={ false }/>
       </div>
     )
   }

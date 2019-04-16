@@ -8,8 +8,16 @@ import Loadable from 'react-loadable'
 import RouteLoading from 'components/RouteLoading/index'
 
 
-const Home = Loadable({
-  loader: () => import('./children/Home/index'),
+const Tabs = Loadable({
+  loader: () => import('./children/Tabs'),
+  loading: RouteLoading,
+})
+const QuickStart = Loadable({
+  loader: () => import('./children/QuickStart'),
+  loading: RouteLoading,
+})
+const Introduce = Loadable({
+  loader: () => import('./children/Introduce'),
   loading: RouteLoading,
 })
 
@@ -21,17 +29,27 @@ class Main extends React.Component {
       <div className="main-component">
         <LeftNav/>
         <Phone />
-        <div className='main-component-router'>
+        <div className='main-component-router center-docs-area'>
           <HashRouter>
             <Switch>
               <AuthRouter
-                path={`${match.url}/home`}
-                component={withRouter(Home)}
+                path={`${match.url}/introduce`}
+                component={withRouter(Introduce)}
+                permissionPath={[]}
+              />
+              <AuthRouter
+                path={`${match.url}/quickStart`}
+                component={withRouter(QuickStart)}
+                permissionPath={[]}
+              />
+              <AuthRouter
+                path={`${match.url}/tabs`}
+                component={withRouter(Tabs)}
                 permissionPath={[]}
               />
               <AuthRouter
                 path={`${match.url}/`}
-                component={withRouter(Home)}
+                component={withRouter(Tabs)}
                 permissionPath={[]}
               />
             </Switch>
