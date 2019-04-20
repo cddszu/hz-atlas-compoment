@@ -1,7 +1,12 @@
 import React from 'react'
 import './component.scss'
 import ReactMarkdown from 'react-markdown'
-import  mdPth from './button.md'
+import  mdPth from './doc-CN.md'
+import Phone from 'components/Phone'
+
+// import { importMDX } from 'mdx.macro'
+// const Content = importMDX('./content.mdx')
+
 class Home extends React.Component {
 
   constructor(props) {
@@ -23,6 +28,8 @@ class Home extends React.Component {
   render() {
     return (
       <div className='home-component'>
+        <Phone to='tabs' />
+        {/* <Content/> */}
         <ReactMarkdown className='markdown' source={ this.state.terms }   escapeHtml={ false }/>
       </div>
     )

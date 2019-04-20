@@ -31,17 +31,14 @@ const filterTabs = (
     <div className='center'>
       <div className='tab-item'>
         <span className='tab-name'>客户类型</span>
-        <i className='iconfont icon-up'></i>
         <i className='iconfont icon-down'></i>
       </div>
       <div className='tab-item'>
         <span className='tab-name'>商机类型</span>
-        <i className='iconfont icon-up'></i>
         <i className='iconfont icon-down'></i>
       </div>
       <div className='tab-item'>
         <span className='tab-name'>更多</span>
-        <i className='iconfont icon-up'></i>
         <i className='iconfont icon-down'></i>
       </div>
     </div>

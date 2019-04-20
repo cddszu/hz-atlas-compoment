@@ -1,0 +1,30 @@
+.tabs-demo-component {
+  font-size: 48px;
+  .diy-tab-header {
+    .content {
+      color: #666666;
+      font-size: 26px;
+      .center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #FFF;
+        height: 80px;
+        padding: 0 30px;
+        width: 100%;
+        .tab-item {
+          &.selected {
+            background: #d40001;
+            font-size: 26px;
+            .icon-up {
+              display: none;
+            }
+            .icon-down {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

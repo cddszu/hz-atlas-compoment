@@ -24,11 +24,9 @@ const Introduce = Loadable({
 class Main extends React.Component {
   render() {
     const { match } = this.props
-
     return (
       <div className="main-component">
         <LeftNav/>
-        <Phone />
         <div className='main-component-router center-docs-area'>
           <HashRouter>
             <Switch>
