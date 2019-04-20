@@ -3,6 +3,7 @@ import './component.scss'
 import moment from 'moment'
 import holiday from './utils/holiday'
 import calendar from './utils/calendar'
+import PropTypes from 'prop-types'
 import { Picker } from 'antd-mobile'
 import LeftArrow from './images/icon-left-arrow@2x.png'
 
@@ -10,6 +11,15 @@ const isObject = (val) => {
   return val != null && typeof val === 'object' && Array.isArray(val) === false;
 }
 class Calendar extends React.Component {
+  static propTypes = {
+
+    // 该数组包含两个元素，分别对应year和month，2019年1月，用[2019, 1]表示
+    initYearMonth: PropTypes.array
+  }
+
+  static defaultProps = {
+    initYearMonth: null
+  }
   constructor(props) {
     super(props)
     this.today_moment = moment()
@@ -168,7 +178,8 @@ class Calendar extends React.Component {
 
   /**
    * @desc 设置年月
-   * @param { Array } yearMonth, month从1开始
+   *
+   * @param { Array } yearMonth, month从1开始，如2019年1月为[2019, 1]
    */
   setYearMonth(yearMonth) {
 
@@ -190,6 +201,12 @@ class Calendar extends React.Component {
     })
   }
 
+  /**
+   * @desc 更新日历当月每一天对应的事件数
+   *
+   * @param events { Array or Object } 为Array时，数组长度为当月的总天数，第一个数组元素对应当月第一天的事件数，以此类推，如[1, 0, 4, 0, ..]
+   *                                   为Object时，每个key对应某一天的日期，格式为'YYYY-MM-DD', value为事件数，如{'2019-03-02': 4, ...}
+   */
   updateEventNums(events) {
     if (events) {
       this.setState({
@@ -272,8 +289,8 @@ class Calendar extends React.Component {
         if (isObject(this.state.events)) {
           var dateStr = moment([dayItem.cYear, dayItem.cMonth - 1, dayItem.cDay]).format('YYYY-MM-DD')
           if (this.state.events[dateStr]) {
-            dayItem.events = this.state.events[dateStr]
-            dayItem.eventNums = this.state.events[dateStr].length
+            // dayItem.events = this.state.events[dateStr]
+            dayItem.eventNums = this.state.events[dateStr]
           } else {
             dayItem.eventNums = 0
           }

@@ -16,7 +16,9 @@
     .icon {
       width: 30px;
       height: 30px;
-
+      >img {
+        vertical-align: top;
+      }
       &.icon-left-arrow {
         >img {
           width: 30px;
@@ -40,6 +42,7 @@
       border-right: none;
       border-radius:20px 0px 0px 20px;
       color: #D40001;
+      font-size: 30px;
     }
 
   }
@@ -81,13 +84,14 @@
             font-size: 32px;
             line-height: 32px;
           }
-          .lunar-text {
-            margin-top: 1px; /*no*/
+          .lunar-text, .holiday-text {
+            // margin-top: 1px; /*no*/
+            line-height: 40px;
+            height: 40px;
             font-size: 20px;
           }
           .holiday-text {
-            margin-top: 1px; /*no*/
-            font-size: 20px;
+            // margin-top: 1px; /*no*/
             &::before {
               content: '假';
               position: absolute;
@@ -104,7 +108,9 @@
             }
           }
           .event-nums {
-            margin-top: 1px; /*no*/
+            display: flex;
+            justify-content: center;
+            // margin-top: 1px; /*no*/
             .event-circle {
               display: inline-block;
               background:rgba(212,0,1,0.6);
