@@ -4,13 +4,14 @@ import PropTypes from 'prop-types'
 
 class Tabs extends PureComponent {
   static propTypes = {
-    initialPage: PropTypes.number,
+    tabIndex: PropTypes.number,
     tabs: PropTypes.object,
+    component: null,
     onChange: PropTypes.func
   }
 
   static defaultProps = {
-    initialPage: 0,
+    tabIndex: 0,
     tabs: null,
     component: null,
     onChange: null
@@ -18,111 +19,104 @@ class Tabs extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      currentPage: this.props.initialPage ? this.props.initialPage : 0
+      currentTabIndex: this.props.tabIndex ? this.props.tabIndex : 0
     }
+    this.generateTabList = this.generateTabList.bind(this)
   }
 
-  clickHandler(index,e) {
+  clickHandler(index, title) {
     this.setState({
-      currentPage: index + 1
+      currentTabIndex: index
     })
     if (this.props.onChange) {
-      this.props.onChange(index,e)
+      this.props.onChange(index, title)
     }
   }
 
   cancelSelectHandler() {
     this.setState({
-      currentPage: 0
+      currentTabIndex: -1
     })
   }
-
-  componentWillMount() {
-  }
-  componentDidMount() {
+  generateTabList(tabList) {
+    return (
+      <tabList.type {...tabList.props}>
+        {
+          tabList.props.children.map((item, index) => {
+            return (
+              React.cloneElement(item, {
+                onClick: this.clickHandler.bind(this, index, item.title),
+                className: item.props.className + ' ' + (index ===  this.state.currentTabIndex ? 'selected' : 'not-selected')
+              })
+            )
+          })
+        }
+      </tabList.type>
+    )
   }
   componentWillReceiveProps({ component }) {
-    if (component !== this.props.component) {
+    if (component !== this.props.headerSlot) {
     }
   }
 
   render() {
-    const { currentPage } = this.state
+    const { currentTabIndex } = this.state
+    let DIYHeader = null
+    let DIYHeaderContent = null
+    DIYHeader = this.props.headerSlot
+    if (DIYHeader) {
+      DIYHeaderContent = DIYHeader.props.children
+    }
     return (
       <div className='tabs-component'>
-        <div className='tab-header'>
-          {
-            this.props.component ? (
-              <div className='diy-tab-header'>
-                <this.props.component.type {...this.props.component.props}>
+        {
+          this.props.headerSlot ? (
+              <DIYHeader.type {...DIYHeader.props}>
+                <DIYHeaderContent.type {...DIYHeaderContent.props}>
                   {
-                    this.props.component.props.children.length ?
+                    Array.isArray(DIYHeaderContent.props.children) ?
                     (
-                      this.props.component.props.children.map((item, index) => {
+                      DIYHeaderContent.props.children.map((item, index) => {
                         if (item.props.className && item.props.className.indexOf('center') > -1) {
-                          return (
-                            <div  {...item.props}>
-                              {
-                                item.props.children.map((item, index) => (
-                                  <div
-                                    onClick={this.clickHandler.bind(this, index, item.key)}
-                                    className={ index + 1 ===  currentPage ? 'selected' : 'not-selected' }
-                                  >{ item }</div>
-                                ))
-                              }
-                            </div>
-                          )
+                          return this.generateTabList(item)
                         }
                         return item
                       })
                     ) :
                     (
-                      <this.props.component.props.children.type {...this.props.component.props.children.props}>
-                        {
-                          this.props.component.props.children.props.children.map((item, index) => {
-                            return (
-                              <div
-                                onClick={this.clickHandler.bind(this, index, item.key)}
-                                className={ index + 1 ===  this.state.currentPage ? 'selected' : 'not-selected' }
-                              >{ item }</div>
-                            )
-                          })
-                        }
-                      </this.props.component.props.children.type>
+                      this.generateTabList(DIYHeaderContent.props.children)
                     )
-
                   }
-                </this.props.component.type>
-              </div>
-            ) :
-            (
-              <div className='default-tab-header'>
-                <div className='content'>
-                  <div className='left' onClick={this.props.leftHandler}>
-                    { this.props.left || null }
-                  </div>
-                  <div className='center' style={{width: this.props.left && this.props.right ? 'auto' : '100%'}}>
-                    {
-                      this.props.tabs.map((item, index) => (
-                        <span
-                          onClick={this.clickHandler.bind(this, index, item.key)}
-                          className={ 'tab-item ' + (index + 1 ===  this.state.currentPage ? 'selected' : 'not-selected') }
-                        >{ item.title }</span>
-                      ))
-                    }
-                  </div>
-                  <div className='right' onClick={this.props.rightHandler}>
-                    { this.props.right || null }
-                  </div>
+                </DIYHeaderContent.type>
+              </DIYHeader.type>
+          ) :
+          (
+            <div className='default-tab-header'>
+              <div className='content'>
+                <div className='left'>
+                  { this.props.leftSlot || null }
+                </div>
+                <div className='center' style={{width: this.props.leftSlot && this.props.rightSlot  ? 'auto' : '100%'}}>
+                  {
+                    this.props.tabs.map((item, index) => (
+                      <span
+                        onClick={this.clickHandler.bind(this, index, item.title)}
+                        className={ 'tab-item ' + (index ===  currentTabIndex ? 'selected' : 'not-selected') }
+                      >{ item.title }</span>
+                    ))
+                  }
+                </div>
+                <div className='right'>
+                  { this.props.rightSlot  || null }
                 </div>
               </div>
-            )
-          }
-        </div>
+            </div>
+          )
+        }
         <div className='tabpane-list'>
           {
             Array.isArray(this.props.children) ? this.props.children.map((item, index) => {
-                if (index + 1 === this.state.currentPage) {
+                if (index === currentTabIndex) {
                   return <div className='show'>{ item }</div>
                 } else {
                   return <div className='hide'>{ item }</div>
@@ -135,5 +129,4 @@ class Tabs extends PureComponent {
     )
   }
 }
-
 export default Tabs
