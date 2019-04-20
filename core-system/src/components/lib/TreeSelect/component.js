@@ -59,7 +59,7 @@ class TreeSelect extends React.Component {
 
     // 设置为false时，当前非叶子节点只能通过全部按钮选中
     isSelectedAllInChildren: false,
-    isShowBreadcrumb: false,
+    isShowBreadcrumb: true,
     asynFetchDepth: 1,
     onAsynSearch: null,
     onAsynFetch: null, // 根据唯一标识id拉取下一级数据

@@ -1,5 +1,6 @@
 
 .tree-select-component {
+  position: relative;
   $confirmAreaHeight: 118px;
   @mixin card-item-check-button() {
     background-position: center center;

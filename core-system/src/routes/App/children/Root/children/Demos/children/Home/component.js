@@ -2,7 +2,6 @@ import React from 'react'
 import './component.scss'
 import { List } from 'antd-mobile'
 import { Link } from 'react-router-dom'
-const Item = List.Item
 const demos = [
   {title: 'Tabs 标签页', to: 'tabs'},
   {title: 'Calendar 日历', to: 'calendar'},
@@ -17,7 +16,7 @@ class Home extends React.Component {
             {
               demos.map(item => (
                 <Link to={ item.to }>
-                <Item arrow="horizontal">{ item.title }</Item>
+                <List.Item arrow="horizontal">{ item.title }</List.Item>
               </Link>
               ))
             }
