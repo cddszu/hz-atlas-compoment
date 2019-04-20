@@ -8,16 +8,25 @@ import Loadable from 'react-loadable'
 import RouteLoading from 'components/RouteLoading/index'
 
 
-const Tabs = Loadable({
-  loader: () => import('./children/Tabs'),
-  loading: RouteLoading,
-})
+
 const QuickStart = Loadable({
   loader: () => import('./children/QuickStart'),
   loading: RouteLoading,
 })
 const Introduce = Loadable({
   loader: () => import('./children/Introduce'),
+  loading: RouteLoading,
+})
+const Tabs = Loadable({
+  loader: () => import('./children/Tabs'),
+  loading: RouteLoading,
+})
+const TreeSelect = Loadable({
+  loader: () => import('./children/TreeSelect'),
+  loading: RouteLoading,
+})
+const Calendar = Loadable({
+  loader: () => import('./children/Calendar'),
   loading: RouteLoading,
 })
 
@@ -43,6 +52,16 @@ class Main extends React.Component {
               <AuthRouter
                 path={`${match.url}/tabs`}
                 component={withRouter(Tabs)}
+                permissionPath={[]}
+              />
+              <AuthRouter
+                path={`${match.url}/calendar`}
+                component={withRouter(Calendar)}
+                permissionPath={[]}
+              />
+              <AuthRouter
+                path={`${match.url}/treeSelect`}
+                component={withRouter(TreeSelect)}
                 permissionPath={[]}
               />
               <AuthRouter

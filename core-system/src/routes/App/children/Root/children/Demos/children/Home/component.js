@@ -3,16 +3,26 @@ import './component.scss'
 import { List } from 'antd-mobile'
 import { Link } from 'react-router-dom'
 const Item = List.Item
+const demos = [
+  {title: 'Tabs 标签页', to: 'tabs'},
+  {title: 'Calendar 日历', to: 'calendar'},
+  {title: 'TreeSelect 树选择', to: 'treeSelect'},
+]
 class Home extends React.Component {
   render () {
     return (
       <div className="main-component">
         <div className='main-component-router'>
-          <Link className='schedule-header' to='/root/components/tabs'>
             <List renderHeader={() => '数据展示'} className="my-list">
-              <Item arrow="horizontal" multipleLine onClick={() => {}}>Tabs 标签页</Item>
+            {
+              demos.map(item => (
+                <Link to={ item.to }>
+                <Item arrow="horizontal">{ item.title }</Item>
+              </Link>
+              ))
+            }
             </List>
-          </Link>
+
         </div>
       </div>
     )

@@ -40,9 +40,10 @@ class Header extends React.Component {
           {/* <Item>PaginationList(分页列表)</Item>
           <Item>Tabs(标签)</Item>
           <Item>InnerPage(内页)</Item> */}
-
-          <Item><a href='/#/root/main/paginationList'>PaginationList(分页列表)</a></Item>
           <Item><a href='/#/root/main/tabs'>Tabs(标签)</a></Item>
+          <Item><a href='/#/root/main/calendar'>Calendar(日历)</a></Item>
+          <Item><a href='/#/root/main/treeSelect'>TreeSelect(树选择)</a></Item>
+          <Item><a href='/#/root/main/paginationList'>PaginationList(分页列表)</a></Item>
           <Item><a href='/#/root/main/innerPage'>InnerPage(内页)</a></Item>
         </SubMenu>
       </Menu>

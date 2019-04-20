@@ -196,7 +196,6 @@ class TreeSelect extends React.Component {
               // 对不存在的点进行加工
               var leafParentNode = _this.getNodeById(leafNode.parentNodeId)
               if (!leafParentNode) {
-                debugger
                 console.error('当前叶子节点找不到匹配的父节点，数据有问题，当前叶子节点为',leafNode)
                 return
               }

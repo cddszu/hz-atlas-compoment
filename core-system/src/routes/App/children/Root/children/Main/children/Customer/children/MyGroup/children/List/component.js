@@ -50,7 +50,6 @@ class MyGroup extends React.Component {
     this.toggleGroupMemberPageHandler()
   }
   componentWillMount() {
-    debugger
     this.props.getMyGroupList()
   }
   componentDidUpdate(prevProps, prevState) {

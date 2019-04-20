@@ -53,7 +53,6 @@ export const upFileReport = (bodyData) => {
 
 //下载附件
 export const getDownFileReport = (id) => {
-  debugger;
   const config = {
     url: `${isMock()}/crm-jj/api/file/fileDown`,
     queryData: {

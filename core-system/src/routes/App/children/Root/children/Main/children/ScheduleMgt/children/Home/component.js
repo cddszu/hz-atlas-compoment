@@ -53,7 +53,7 @@ class Home extends React.Component {
           <span className='schedule-confirm'></span>
         </div>
         <div className='schedule-container'>
-          <Calendar onSelectDay={this.onSelectDay} getEvents={this.getEvents}/>
+          <Calendar onSelectDay={this.onSelectDay} getEvents={this.getEvents} />
           {
             someday_schedule_list.length !== 0 ?
               <div className='schedule-list'>

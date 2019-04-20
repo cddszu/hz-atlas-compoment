@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './component.scss'
-import AuthRouter from 'components/AuthRouter/index.js'
+import AuthRouter from 'components/AuthRouter'
 
 import Login from './children/Login'
 import Test from './children/Test'
 import Main from './children/Main'
-import Components from './children/Components'
+import Demos from './children/Demos'
 import { BrowserRouter as Router, Route, Switch, withRouter , HashRouter  } from 'react-router-dom'
 
 class Root extends React.Component {
@@ -32,7 +32,7 @@ class Root extends React.Component {
             <Switch>
               <Route path={`${match.url}/login`} component={withRouter(Login)}></Route>
               <Route path={`${match.url}/main`} component={withRouter(Main)}></Route>
-              <Route path={`${match.url}/components`} component={withRouter(Components)}></Route>
+              <Route path={`${match.url}/demos`} component={withRouter(Demos)}></Route>
               <Route path={'/'} component={withRouter(Login)}></Route>
             </Switch>
           </HashRouter>
