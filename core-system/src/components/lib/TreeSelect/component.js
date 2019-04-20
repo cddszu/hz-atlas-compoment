@@ -50,7 +50,7 @@ class TreeSelect extends React.Component {
   }
   static defaultProps = Object.assign({
     treeData: null,
-    // 组件支持三种选择模式：single（单选）、multi（多选）、view（不可选）
+    // 组件支持四种选择模式：single（单选）、multi（多选）、view（不可选）、quirks-single(怪异模式的single)
     mode: 'view',
     treeType: '', // area(省市县)、industry(行业)
     // 折叠层是否展示根节点，默认不展示
@@ -68,12 +68,14 @@ class TreeSelect extends React.Component {
     zIndex: 1,
     column: 1
   }, testMode ? {
-    mode: 'multi',
+    mode: 'quirks-single',
+    /**
     treeData: areaTreeWithoutCountries,
     asynFetchDepth: 1,
-
-    // treeData: areaTreeOnlyProvinces, // 测试模式
-    // asynFetchDepth: 3,
+    */
+    treeData: areaTreeOnlyProvinces, // 测试模式
+    asynFetchDepth: 3,
+    column: 3,
     onAsynSearch: getCountryByNameKey, // 测试异步模式
     onAsynFetch: getAreaById,  // 测试异步模式
   } : {})
@@ -137,6 +139,8 @@ class TreeSelect extends React.Component {
     } else {
       if (this.props.treeType === 'area') {
         treeData = areaTreeOnlyProvinces
+      } else {
+        treeData = initData
       }
     }
 
@@ -281,7 +285,7 @@ class TreeSelect extends React.Component {
       treeNode.checked = false
       treeNode.parentNode = parentNode
       this.id_map_all_node[treeNode.id] = treeNode
-      const hasChildren = (treeNode && treeNode.children.length !== 0)
+      const hasChildren = (treeNode.children && treeNode.children.length !== 0)
       if (hasChildren) {
         treeNode.children.map(node => {
           this.formatTree(node, treeNode, columnIndex + 1, treeDepth + 1)
@@ -306,7 +310,7 @@ class TreeSelect extends React.Component {
   }
   updateChildrenCheckedStatus(treeNode) {
     var checked = treeNode.checked
-    if (treeNode && treeNode.children) {
+    if (this.props.mode === 'multi' && treeNode && treeNode.children) {
       treeNode.children.map(childNode => {
         var childNode_old_checked = childNode.checked
         if (childNode_old_checked !== checked) {
@@ -410,7 +414,7 @@ class TreeSelect extends React.Component {
       }
     }
     if (!treeNode.isLeaf || (treeNode.isLeaf && treeNode.parentNode)) {
-      if (this.props.mode === 'single') {
+      if (this.props.mode === 'single' || this.props.mode === 'quirks-single') {
         this.chooseRadioHandler(treeNode)
       } else {
         this.chooseCheckboxHandler(treeNode)
@@ -470,7 +474,7 @@ class TreeSelect extends React.Component {
               className='card-item-header'
             >
               {
-                (this.props.mode === 'single' && innerItem.isLeaf) &&
+                ((this.props.mode === 'single' && innerItem.isLeaf) || this.props.mode ==='quirks-single') &&
                 <div
                   className={`card-item-radio ${innerItem.checked && 'checked'}`}
                   onClick={this.selectHandler.bind(this, innerItem, isAllBtn)}
@@ -552,9 +556,11 @@ class TreeSelect extends React.Component {
       childNode.treeDepth = parentNode.treeDepth + 1
       childNode.asynFetchDepth = (!parentNode.asynFetchDepth ? 0 : parentNode.asynFetchDepth) + 1
       childNode.isLeaf = this.isLeaf(childNode)
-      if (parentNode.checked) {
-        childNode.checked = true
-        parentNode.selectedNum = parentNode.children.length
+      if (this.props.mode !== 'quirks-single') {
+        if (parentNode.checked) {
+          childNode.checked = true
+          parentNode.selectedNum = parentNode.children.length
+        }
       }
     })
     _this.forceUpdate()
@@ -602,27 +608,30 @@ class TreeSelect extends React.Component {
       <div
         className="tree-select-component"
         style={{display: this.state.isShow ? 'block' : 'none', zIndex: this.props.zIndex}}>
-        <div className='top-area' ref={topArea => this.topArea = topArea}>
-          {
-            (this.props.isShowSearchBar && (this.props.asynFetchDepth === 1)) &&
-            <SearchBar className='search-input' placeholder='搜索'
-              onChange={this.nameChangeHandler}
-            />
-          }
-          <div className='bread'>
-            <div className='bread-content'>
+        {
+          this.props.isShowBreadcrumb &&
+          <div className='top-area' ref={topArea => this.topArea = topArea}>
             {
-              this.state.breadcrumbList.map((item, index) => (
-                <span
-                  key={index}
-                  className={`bread-item ${this.state.breadcrumbList.length -1 === index && 'current-item'}`}
-                  onClick={this.jumpTo.bind(this, item, index)}
-                >{ item.name }</span>
-              ))
+              (this.props.isShowSearchBar && (this.props.asynFetchDepth === 1)) &&
+              <SearchBar className='search-input' placeholder='搜索'
+                onChange={this.nameChangeHandler}
+              />
             }
+            <div className='bread'>
+              <div className='bread-content'>
+              {
+                this.state.breadcrumbList.map((item, index) => (
+                  <span
+                    key={index}
+                    className={`bread-item ${this.state.breadcrumbList.length -1 === index && 'current-item'}`}
+                    onClick={this.jumpTo.bind(this, item, index)}
+                  >{ item.name }</span>
+                ))
+              }
+              </div>
             </div>
           </div>
-        </div>
+        }
         <div className='columns' ref={columnsArea => this.columnsArea = columnsArea}>
           {
             // this.generateColumns(this.state.treeNodeColumns)

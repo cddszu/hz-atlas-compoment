@@ -1,8 +1,8 @@
 // 数据源：https://github.com/wecatch/china_regions
-import { provinces } from './js/provinces'
-import { cities } from './js/cities'
-import { countries } from './js/countries'
-import { towns } from './js/towns'
+import { provinces } from './js/provinces.min'
+import { cities } from './js/cities.min'
+import { countries } from './js/countries.min'
+import { towns } from './js/towns.min'
 
 const generateTree = (provinces, cities, countries) => {
   var treeData = {
