@@ -10,8 +10,8 @@ const basicConfig = {
     {title: 'tab 3', key: '1' }
   ],
   tabIndex: 0,
-  onChange: (index, title) => {
-    Toast.info(index + ':' + title, showTime)
+  onClick: (index, title, key) => {
+    Toast.info(`tabIndex is ${index}, tabTitle is ${title}, tabKey is ${key}`, showTime)
   }
 }
 
@@ -30,7 +30,7 @@ const extendConfig = {
 }
 
 const advancedConfig = {
-  headerSlot: (
+  tabsSlot: (
     <div className='diy-tab-header'>
       <div className='content'>
         {

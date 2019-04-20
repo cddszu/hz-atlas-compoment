@@ -5,16 +5,20 @@ import PropTypes from 'prop-types'
 class Tabs extends PureComponent {
   static propTypes = {
     tabIndex: PropTypes.number,
-    tabs: PropTypes.object,
-    component: null,
-    onChange: PropTypes.func
+    tabs: PropTypes.array,
+    onClick: PropTypes.func,
+    leftSlot: PropTypes.element,
+    rightSlot: PropTypes.element,
+    tabsSlot: PropTypes.element
   }
 
   static defaultProps = {
     tabIndex: 0,
-    tabs: null,
-    component: null,
-    onChange: null
+    tabs: [],
+    onClick: null,
+    leftSlot: null,
+    rightSlot: null,
+    tabsSlot: null
   }
   constructor(props) {
     super(props)
@@ -24,12 +28,12 @@ class Tabs extends PureComponent {
     this.generateTabList = this.generateTabList.bind(this)
   }
 
-  clickHandler(index, title) {
+  clickHandler(index, title, key, event) {
     this.setState({
       currentTabIndex: index
     })
-    if (this.props.onChange) {
-      this.props.onChange(index, title)
+    if (this.props.onClick) {
+      this.props.onClick(index, title, key)
     }
   }
 
@@ -45,7 +49,7 @@ class Tabs extends PureComponent {
           tabList.props.children.map((item, index) => {
             return (
               React.cloneElement(item, {
-                onClick: this.clickHandler.bind(this, index, item.title),
+                onClick: this.clickHandler.bind(this, index, item.title, item.key),
                 className: item.props.className + ' ' + (index ===  this.state.currentTabIndex ? 'selected' : 'not-selected')
               })
             )
@@ -55,7 +59,7 @@ class Tabs extends PureComponent {
     )
   }
   componentWillReceiveProps({ component }) {
-    if (component !== this.props.headerSlot) {
+    if (component !== this.props.tabsSlot) {
     }
   }
 
@@ -63,14 +67,14 @@ class Tabs extends PureComponent {
     const { currentTabIndex } = this.state
     let DIYHeader = null
     let DIYHeaderContent = null
-    DIYHeader = this.props.headerSlot
+    DIYHeader = this.props.tabsSlot
     if (DIYHeader) {
       DIYHeaderContent = DIYHeader.props.children
     }
     return (
       <div className='tabs-component'>
         {
-          this.props.headerSlot ? (
+          this.props.tabsSlot ? (
               <DIYHeader.type {...DIYHeader.props}>
                 <DIYHeaderContent.type {...DIYHeaderContent.props}>
                   {
@@ -100,7 +104,7 @@ class Tabs extends PureComponent {
                   {
                     this.props.tabs.map((item, index) => (
                       <span
-                        onClick={this.clickHandler.bind(this, index, item.title)}
+                        onClick={this.clickHandler.bind(this, index, item.title, item.key)}
                         className={ 'tab-item ' + (index ===  currentTabIndex ? 'selected' : 'not-selected') }
                       >{ item.title }</span>
                     ))
