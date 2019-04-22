@@ -45,6 +45,9 @@ class Header extends React.Component {
           <Item><a href='/#/root/main/treeSelect'>TreeSelect(树选择)</a></Item>
           <Item><a href='/#/root/main/paginationList'>PaginationList(分页列表)</a></Item>
           <Item><a href='/#/root/main/innerPage'>InnerPage(内页)</a></Item>
+          <Item><a href='/#/root/main/returnHeader'>ReturnHeader(返回头)</a></Item>
+          <Item><a href='/#/root/main/TogglePage'>TogglePage(切页)</a></Item>
+          <Item><a href='/#/root/main/goBack'>GoBack(返回)</a></Item>
         </SubMenu>
       </Menu>
       </div>

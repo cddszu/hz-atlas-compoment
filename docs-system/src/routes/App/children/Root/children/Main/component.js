@@ -29,6 +29,10 @@ const Calendar = Loadable({
   loader: () => import('./children/Calendar'),
   loading: RouteLoading,
 })
+const InnerPage = Loadable({
+  loader: () => import('./children/InnerPage'),
+  loading: RouteLoading,
+})
 
 class Main extends React.Component {
   render() {
@@ -62,6 +66,11 @@ class Main extends React.Component {
               <AuthRouter
                 path={`${match.url}/treeSelect`}
                 component={withRouter(TreeSelect)}
+                permissionPath={[]}
+              />
+              <AuthRouter
+                path={`${match.url}/innerPage`}
+                component={withRouter(InnerPage)}
                 permissionPath={[]}
               />
               <AuthRouter

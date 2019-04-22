@@ -6,6 +6,10 @@ const demos = [
   {title: 'Tabs 标签页', to: 'tabs'},
   {title: 'Calendar 日历', to: 'calendar'},
   {title: 'TreeSelect 树选择', to: 'treeSelect'},
+  {title: 'InnerPage 内页', to: 'innerPage'},
+  {title: 'TogglePage 切页', to: 'togglePage'},
+  {title: 'ReturnHeader 返回头', to: 'returnHeader'},
+  {title: 'GoBack 返回', to: 'goBack'},
 ]
 class Home extends React.Component {
   render () {

@@ -1,11 +1,15 @@
 import React from 'react'
 import './component.scss'
 import { Switch, withRouter , HashRouter  } from 'react-router-dom'
+import Loadable from 'components/lib/Loadable'
 import AuthRouter from 'components/AuthRouter'
 import Home from './children/Home'
 import TabsDemo from './children/TabsDemo'
 import CalendarDemo from './children/CalendarDemo'
 import TreeSelectDemo from './children/TreeSelectDemo'
+import InnerPageDemo from './children/InnerPageDemo'
+const ReturnHeaderDemo = Loadable(import('./children/ReturnHeaderDemo'))
+
 class ComponentList extends React.Component {
   render () {
     const  { match } = this.props
@@ -32,6 +36,16 @@ class ComponentList extends React.Component {
               <AuthRouter
                 path={`${match.url}/treeSelect`}
                 component={withRouter(TreeSelectDemo)}
+                permissionPath={[]}
+              />
+              <AuthRouter
+                path={`${match.url}/innerPage`}
+                component={withRouter(InnerPageDemo)}
+                permissionPath={[]}
+              />
+              <AuthRouter
+                path={`${match.url}/returnHeader`}
+                component={withRouter(ReturnHeaderDemo)}
                 permissionPath={[]}
               />
               <AuthRouter
