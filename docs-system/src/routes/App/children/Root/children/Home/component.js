@@ -18,7 +18,7 @@ class Home extends React.Component {
               <p className='des'>react-mobile-ui组件库</p>
               <div className='btn'>
                 <Link to='/root/main'>开始使用</Link>
-                <a href='http://git.sz.haizhi.com/department/frontend/jquery-hzui' className='github' target='_blank'>Gitlab</a>
+                <a href='http://git.sz.haizhi.com/department/frontend/hz-react-mobile' className='github' target='_blank'>Gitlab</a>
               </div>
             </div>
           </div>
