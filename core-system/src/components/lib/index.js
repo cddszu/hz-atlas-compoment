@@ -1,6 +1,6 @@
 import Calendar from './Calendar'
-import CreateItem from './CreateItem'
-import FadePage from './FadePage'
+// import CreateItem from './CreateItem'
+// import FadePage from './FadePage'
 import GoBack from './GoBack'
 import InnerPage from './InnerPage'
 import LandscapePage from './LandscapePage'
@@ -10,8 +10,8 @@ import TogglePage from './TogglePage'
 import TreeSelect from './TreeSelect'
 export {
   Calendar,
-  CreateItem,
-  FadePage,
+//  CreateItem,
+//  FadePage,
   GoBack,
   InnerPage,
   LandscapePage,
