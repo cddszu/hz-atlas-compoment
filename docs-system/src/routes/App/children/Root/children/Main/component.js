@@ -42,6 +42,19 @@ const ReturnHeader = Loadable({
   loading: RouteLoading,
 })
 
+const LandscapePage = Loadable({
+  loader: () => import('./children/LandscapePage'),
+  loading: RouteLoading,
+})
+
+const LoadableDoc = Loadable({
+  loader: () => import('./children/LoadableDoc'),
+  loading: RouteLoading,
+})
+const TogglePage = Loadable({
+  loader: () => import('./children/TogglePage'),
+  loading: RouteLoading,
+})
 
 
 class Main extends React.Component {
@@ -91,6 +104,21 @@ class Main extends React.Component {
               <Route
                 path={`${match.url}/goBack`}
                 component={withRouter(GoBack)}
+                permissionPath={[]}
+              />
+              <Route
+                path={`${match.url}/landscapePage`}
+                component={withRouter(LandscapePage)}
+                permissionPath={[]}
+              />
+              <Route
+                path={`${match.url}/loadable`}
+                component={withRouter(LoadableDoc)}
+                permissionPath={[]}
+              />
+              <Route
+                path={`${match.url}/togglePage`}
+                component={withRouter(TogglePage)}
                 permissionPath={[]}
               />
               <Route

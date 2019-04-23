@@ -10,6 +10,8 @@ import TreeSelectDemo from './children/TreeSelectDemo'
 import InnerPageDemo from './children/InnerPageDemo'
 const ReturnHeaderDemo = Loadable(import('./children/ReturnHeaderDemo'))
 const GoBackDemo = Loadable(import('./children/GoBackDemo'))
+const LandscapePageDemo = Loadable(import('./children/LandscapePageDemo'))
+const TogglePageDemo = Loadable(import('./children/TogglePageDemo'))
 
 class ComponentList extends React.Component {
   render () {
@@ -52,6 +54,16 @@ class ComponentList extends React.Component {
               <AuthRouter
                 path={`${match.url}/goBack`}
                 component={withRouter(GoBackDemo)}
+                permissionPath={[]}
+              />
+              <AuthRouter
+                path={`${match.url}/landscapePage`}
+                component={withRouter(LandscapePageDemo)}
+                permissionPath={[]}
+              />
+              <AuthRouter
+                path={`${match.url}/togglePage`}
+                component={withRouter(TogglePageDemo)}
                 permissionPath={[]}
               />
               <AuthRouter

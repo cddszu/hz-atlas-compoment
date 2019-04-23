@@ -49,8 +49,10 @@ class LeftNav extends React.Component {
           <Item><Link to='/root/main/treeSelect'>TreeSelect(树选择)</Link></Item>
           <Item><Link to='/root/main/paginationList'>PaginationList(分页列表)</Link></Item>
           <Item><Link to='/root/main/innerPage'>InnerPage(内页)</Link></Item>
+          <Item><Link to='/root/main/landscapePage'>LandscapePage(横屏页)</Link></Item>
+          <Item><Link to='/root/main/loadable'>Loadable(分割加载)</Link></Item>
           <Item><Link to='/root/main/returnHeader'>ReturnHeader(返回头)</Link></Item>
-          <Item><Link to='/root/main/TogglePage'>TogglePage(切页)</Link></Item>
+          <Item><Link to='/root/main/togglePage'>TogglePage(切页)</Link></Item>
           <Item><Link to='/root/main/goBack'>GoBack(返回)</Link></Item>
         </SubMenu>
       </Menu>

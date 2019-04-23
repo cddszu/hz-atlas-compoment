@@ -1,8 +1,8 @@
 import React from 'react'
 import './component.scss'
 import PropTypes from 'prop-types'
-import { ReturnHeader } from 'components/lib'
-import TogglePage from '../TogglePage/component';
+import ReturnHeader from '../ReturnHeader'
+import TogglePage from '../TogglePage'
 
 class InnerPage extends React.Component {
   // import PropTypes from 'prop-types'
