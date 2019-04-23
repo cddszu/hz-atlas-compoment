@@ -5,7 +5,6 @@ import AuthRouter from 'components/AuthRouter'
 
 import Login from './children/Login'
 import Test from './children/Test'
-import Main from './children/Main'
 import Demos from './children/Demos'
 import { BrowserRouter as Router, Route, Switch, withRouter , HashRouter  } from 'react-router-dom'
 
@@ -31,7 +30,6 @@ class Root extends React.Component {
           <HashRouter>
             <Switch>
               <Route path={`${match.url}/login`} component={withRouter(Login)}></Route>
-              <Route path={`${match.url}/main`} component={withRouter(Main)}></Route>
               <Route path={`${match.url}/demos`} component={withRouter(Demos)}></Route>
               <Route path={'/'} component={withRouter(Login)}></Route>
             </Switch>
