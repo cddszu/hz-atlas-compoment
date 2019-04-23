@@ -29,9 +29,9 @@ class Root extends React.Component {
         <div className='root-component-router'>
           <HashRouter>
             <Switch>
-              <Route path={`${match.url}/login`} component={withRouter(Login)}></Route>
-              <Route path={`${match.url}/demos`} component={withRouter(Demos)}></Route>
-              <Route path={'/'} component={withRouter(Login)}></Route>
+              <Route path={`${match.url}/login`} component={Login}></Route>
+              <Route path={`${match.url}/demos`} component={Demos}></Route>
+              <Route path={'/'} component={Demos}></Route>
             </Switch>
           </HashRouter>
         </div>

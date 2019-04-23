@@ -19,7 +19,7 @@ class Home extends React.Component {
             <List renderHeader={() => '数据展示'} className="my-list">
             {
               demos.map(item => (
-                <Link to={ item.to }>
+                <Link to={ `/root/demos/${item.to}` }>
                 <List.Item arrow="horizontal">{ item.title }</List.Item>
               </Link>
               ))
