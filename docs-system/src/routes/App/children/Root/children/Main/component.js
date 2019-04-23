@@ -1,12 +1,13 @@
 import React from 'react'
 import './component.scss'
 import { BrowserRouter as Router, Route, Switch, withRouter, HashRouter } from 'react-router-dom'
-import AuthRouter from 'components/AuthRouter'
+import AuthRoute from 'components/AuthRoute'
+import Auth from 'components/Auth'
 import LeftNav from 'components/LeftNav'
 import Phone from 'components/Phone'
 import Loadable from 'react-loadable'
 import RouteLoading from 'components/RouteLoading/index'
-
+import ReturnHeader from './children/ReturnHeader'
 
 
 const QuickStart = Loadable({
@@ -39,41 +40,46 @@ class Main extends React.Component {
     const { match } = this.props
     return (
       <div className="main-component">
-        <LeftNav/>
+        <LeftNav />
         <div className='main-component-router center-docs-area'>
           <HashRouter>
             <Switch>
-              <AuthRouter
+              <Route
                 path={`${match.url}/introduce`}
                 component={withRouter(Introduce)}
                 permissionPath={[]}
               />
-              <AuthRouter
+              <Route
                 path={`${match.url}/quickStart`}
                 component={withRouter(QuickStart)}
                 permissionPath={[]}
               />
-              <AuthRouter
+              <Route
                 path={`${match.url}/tabs`}
                 component={withRouter(Tabs)}
                 permissionPath={[]}
               />
-              <AuthRouter
+              <Route
                 path={`${match.url}/calendar`}
                 component={withRouter(Calendar)}
                 permissionPath={[]}
               />
-              <AuthRouter
+              <Route
                 path={`${match.url}/treeSelect`}
                 component={withRouter(TreeSelect)}
                 permissionPath={[]}
               />
-              <AuthRouter
+              <Route
                 path={`${match.url}/innerPage`}
                 component={withRouter(InnerPage)}
                 permissionPath={[]}
               />
-              <AuthRouter
+              <Route
+                path={`${match.url}/returnHeader`}
+                component={withRouter(ReturnHeader)}
+                permissionPath={[]}
+              />
+              <Route
                 path={`${match.url}/`}
                 component={withRouter(Tabs)}
                 permissionPath={[]}

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './component.scss'
-import AuthRouter from 'components/AuthRouter/index.js'
+import AuthRoute from 'components/AuthRoute/index.js'
 import Loadable from 'react-loadable'
 import RouteLoading from 'components/RouteLoading/index'
 import Header from 'components/Header'
@@ -29,9 +29,9 @@ class Root extends React.Component {
         <div className='root-component-router'>
           <HashRouter>
             <Switch>
-              <AuthRouter path={`${match.url}/home`} component={withRouter(Home)}></AuthRouter>
-              <AuthRouter path={`${match.url}/main`} component={withRouter(Main)}></AuthRouter>
-              <AuthRouter path={'/'} component={withRouter(Home)}></AuthRouter>
+              <Route  path={`${match.url}/home`} component={Home} />
+              <Route  path={`${match.url}/main`} component={Main} />
+              <Route exact path={'/'} component={Home} />
             </Switch>
           </HashRouter>
         </div>

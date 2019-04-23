@@ -3,13 +3,14 @@ import './component.scss'
 import { Menu, Icon } from 'antd'
 import {withRouter} from 'react-router'
 import { Link } from 'react-router-dom'
+import HzLink from 'components/HzLink'
 const SubMenu = Menu.SubMenu
 const MenuItemGroup = Menu.ItemGroup
 const Item = Menu.Item
 const nav = [{
   type: 'item', // item、group、menu
 }]
-class Header extends React.Component {
+class LeftNav extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -17,8 +18,11 @@ class Header extends React.Component {
     }
   }
   componentWillMount() {
+    debugger
   }
-
+  componentDidMount() {
+    debugger
+  }
   componentWillReceiveProps() {
   }
 
@@ -40,14 +44,14 @@ class Header extends React.Component {
           {/* <Item>PaginationList(分页列表)</Item>
           <Item>Tabs(标签)</Item>
           <Item>InnerPage(内页)</Item> */}
-          <Item><a href='/#/root/main/tabs'>Tabs(标签)</a></Item>
-          <Item><a href='/#/root/main/calendar'>Calendar(日历)</a></Item>
-          <Item><a href='/#/root/main/treeSelect'>TreeSelect(树选择)</a></Item>
-          <Item><a href='/#/root/main/paginationList'>PaginationList(分页列表)</a></Item>
-          <Item><a href='/#/root/main/innerPage'>InnerPage(内页)</a></Item>
-          <Item><a href='/#/root/main/returnHeader'>ReturnHeader(返回头)</a></Item>
-          <Item><a href='/#/root/main/TogglePage'>TogglePage(切页)</a></Item>
-          <Item><a href='/#/root/main/goBack'>GoBack(返回)</a></Item>
+          <Item><Link to='/root/main/tabs'>Tabs(标签)</Link></Item>
+          <Item><Link to='/root/main/calendar'>Calendar(日历)</Link></Item>
+          <Item><Link to='/root/main/treeSelect'>TreeSelect(树选择)</Link></Item>
+          <Item><Link to='/root/main/paginationList'>PaginationList(分页列表)</Link></Item>
+          <Item><Link to='/root/main/innerPage'>InnerPage(内页)</Link></Item>
+          <Item><Link to='/root/main/returnLeftNav'>ReturnLeftNav(返回头)</Link></Item>
+          <Item><Link to='/root/main/TogglePage'>TogglePage(切页)</Link></Item>
+          <Item><Link to='/root/main/goBack'>GoBack(返回)</Link></Item>
         </SubMenu>
       </Menu>
       </div>
@@ -55,4 +59,4 @@ class Header extends React.Component {
   }
 }
 
-export default withRouter(Header)
+export default withRouter(LeftNav)

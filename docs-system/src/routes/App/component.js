@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import { LocaleProvider } from 'antd'
 import zh_CN from 'antd/lib/locale-provider/zh_CN'
 import 'moment/locale/zh-cn'
-import AuthRouter from 'components/AuthRouter/index.js'
+import AuthRoute from 'components/AuthRoute/index.js'
 
 import 'styles/less/main.less'
 import 'styles/sass/main.scss'
@@ -58,8 +58,8 @@ class App extends Component {
         <Provider store={this.props.store}>
           <HashRouter history={history}>
             <Switch>
-              <Route path="/root" component={withRouter(Root)}></Route>
-              <Route path="/" component={withRouter(Root)}></Route>
+              <Route path="/root" component={withRouter(Root)} />
+              <Route path="/" component={withRouter(Root)} />
             </Switch>
           </HashRouter>
         </Provider>

@@ -19,10 +19,10 @@ class Header extends React.Component {
     return (
       <header className='header-component'>
         <div className='container'>
-            <div class="logo-area">
+            <div className="logo-area">
               <a href="./index.html"><img src={ Logo } /></a>
             </div>
-            <div class="nav-area">
+            <div className="nav-area">
               <a href="#">组件</a>
               <a href="#">关于</a>
             </div>
