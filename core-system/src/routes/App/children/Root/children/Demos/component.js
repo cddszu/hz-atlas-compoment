@@ -9,6 +9,7 @@ import CalendarDemo from './children/CalendarDemo'
 import TreeSelectDemo from './children/TreeSelectDemo'
 import InnerPageDemo from './children/InnerPageDemo'
 const ReturnHeaderDemo = Loadable(import('./children/ReturnHeaderDemo'))
+const GoBackDemo = Loadable(import('./children/GoBackDemo'))
 
 class ComponentList extends React.Component {
   render () {
@@ -46,6 +47,11 @@ class ComponentList extends React.Component {
               <AuthRouter
                 path={`${match.url}/returnHeader`}
                 component={withRouter(ReturnHeaderDemo)}
+                permissionPath={[]}
+              />
+              <AuthRouter
+                path={`${match.url}/goBack`}
+                component={withRouter(GoBackDemo)}
                 permissionPath={[]}
               />
               <AuthRouter

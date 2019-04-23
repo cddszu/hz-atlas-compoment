@@ -7,8 +7,6 @@ import LeftNav from 'components/LeftNav'
 import Phone from 'components/Phone'
 import Loadable from 'react-loadable'
 import RouteLoading from 'components/RouteLoading/index'
-import ReturnHeader from './children/ReturnHeader'
-
 
 const QuickStart = Loadable({
   loader: () => import('./children/QuickStart'),
@@ -34,6 +32,17 @@ const InnerPage = Loadable({
   loader: () => import('./children/InnerPage'),
   loading: RouteLoading,
 })
+const GoBack = Loadable({
+  loader: () => import('./children/GoBack'),
+  loading: RouteLoading,
+})
+
+const ReturnHeader = Loadable({
+  loader: () => import('./children/ReturnHeader'),
+  loading: RouteLoading,
+})
+
+
 
 class Main extends React.Component {
   render() {
@@ -77,6 +86,11 @@ class Main extends React.Component {
               <Route
                 path={`${match.url}/returnHeader`}
                 component={withRouter(ReturnHeader)}
+                permissionPath={[]}
+              />
+              <Route
+                path={`${match.url}/goBack`}
+                component={withRouter(GoBack)}
                 permissionPath={[]}
               />
               <Route
