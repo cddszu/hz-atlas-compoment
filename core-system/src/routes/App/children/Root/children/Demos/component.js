@@ -1,7 +1,7 @@
 import React from 'react'
 import './component.scss'
 import { Switch, withRouter , HashRouter  } from 'react-router-dom'
-import Loadable from 'components/lib/Loadable'
+import { Loadable } from 'components/lib'
 import AuthRouter from 'components/AuthRouter'
 import Home from './children/Home'
 import TabsDemo from './children/TabsDemo'
