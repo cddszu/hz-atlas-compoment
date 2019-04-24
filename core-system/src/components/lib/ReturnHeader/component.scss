@@ -20,8 +20,12 @@
     font-weight:500;
   }
   .header-btn {
-    float: right;
     font-size:32px;
-    color: #D40001;
+  }
+  .header-left-btn {
+    float: left;
+  }
+  .header-right-btn {
+    float: right;
   }
 }

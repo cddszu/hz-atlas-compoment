@@ -30,7 +30,6 @@ class InnerPage extends React.Component {
       <div className='innerPage-component'>
         <Phone to='innerPage' />
         {/* <Content/> */}
-        sdsdd
         <ReactMarkdown className='markdown' source={ this.state.terms }   escapeHtml={ false }/>
       </div>
     )

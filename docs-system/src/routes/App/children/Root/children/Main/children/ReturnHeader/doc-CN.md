@@ -1,33 +1,28 @@
 ---
-InnerPge 内页（隐藏的子页）
+ReturnHeader 返回头
 ---
 
-隐藏在当前页面的子页（内页），进入内页后（切出会遮盖整个父页），可以通过点击头部的返回按钮来回到父页。
-
-
-## 使用说明
-- 内页组件的内容，嵌套在组件标签的开闭区间内，如```<InnerPage>内容</InnerPage >```
-- 内页组件默认是隐藏的，该组件暴露出show方法，用于显示内页(先通过组件的ref属性获得组件元素，进而调用其方法)，如```<InnerPage ref={ page => this.page = page } >内容</InnerPage>```然后在事件监听器中使用```this.page.show()```来显示内页
+通用的返回头，包括左侧按钮、中间title、右侧按钮，右侧按钮默认为空，可以根据需要自定义配置
 
 ## 实现说明
-- 实现原理：隐藏在当前页面的一个块，类似于弹窗，全屏显示，会完全遮盖父页面
-- 基于TogglePage组件实现，可以从当前页面的各个方位切出内页
-- 默认带一个头部，基于ReturnHeader组件实现，采用的是非link模式
-- 通过标签的开闭来包裹内容
-
+- 在link模式下，基于Link组件实现，可以通过链接跳转返回上一层
+- 在history模式下，基于GoBack组件实现，可以通过history.goBack()返回上一层
+- 在cancel模式下，表示取消返回功能，但是可以通过onClick来增加相关的监听处理
 ## API(props)
 
 ### 基本属性
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| mode | 有三个值（仅在cancel模式需要配置该参数）：history（默认值）、link（leftBtn配置url属性自动启动）、cancel（需要取消返回功能时放配置，在cancel之后，仍能通过leftBtn.onClick来增加事件监听） | Object | {} |
 | title | ReturnHeader的配置参数，用于配置返回头部的title | String | '' |
-| from | ReturnHeader的配置参数，值有top, right, bottom, left，用于配置内页从哪个方向切出 | String | right |
+| leftBtn | 左侧按钮的配置对象，包含的属性有url（String，配置了用于启动link模式，不配置默认为history模式）、slot（Component，自定义组件，可以直接为文字）、styles（Object，用于配置css）、onClick（为按钮添加click监听处理） | Object | {} |
+| rightBtn | 右侧按钮的配置对象，包含的属性有slot（同上）、styles（同上）、onClick（同上） | Object | {} |
 
 ### 事件（方法）
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| show | 用于显示内页 | --- | --- |
-| hide | 用于隐藏内页，点击内页自带的ReturnHeader组件，会触发改方法，所以此方法基本极少使用 | --- | --- |
+| --- | --- | --- | --- |
+
 
 ### slot
 | 参数 | 说明 | 类型 | 默认值 |

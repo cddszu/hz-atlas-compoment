@@ -21,7 +21,8 @@ class InnerPage extends React.Component {
   }
 
   static defaultProps = {
-    title: ''
+    title: '',
+    mode: 'cancel'
   }
 
   constructor(props) {

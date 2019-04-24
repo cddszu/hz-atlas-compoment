@@ -18,10 +18,8 @@ class LeftNav extends React.Component {
     }
   }
   componentWillMount() {
-    debugger
   }
   componentDidMount() {
-    debugger
   }
   componentWillReceiveProps() {
   }

@@ -3,19 +3,56 @@ import './component.scss'
 import { ReturnHeader } from 'components/lib'
 import { Toast, List } from 'antd-mobile'
 const showTime = .4
+
+const defaultMode = {
+  title: 'click模式(默认)', //通过事件（控制当前子页面的消失）来返回上一级页面
+  rightBtn: {
+    slot: '保存',
+    styles: {
+      color: 'red',
+    },
+    onClick: () => {
+      Toast.info('触发rightBtn的click事件监听器')
+    }
+  },
+}
 const linkMode = {
   leftBtn: {
-    url: '/root/demos' // 通过链接跳转返回上一级页面
+    url: '/root/demos', // 通过链接跳转返回上一级页面
+    onClick: () => {
+      Toast.info('触发leftBtn的click事件监听器')
+    }
   },
-  title: '内页1'
-}
-const defaultMode = {
-  title: '内页2', //通过事件（控制当前子页面的消失）来返回上一级页面
-  onClick: () => {
-    Toast.info('')
-  }
+  rightBtn: {
+    slot: '保存',
+    styles: {
+      color: 'green',
+    },
+    onClick: () => {
+      Toast.info('触发rightBtn的click事件监听器')
+    }
+  },
+  title: 'link模式(url="/root/demos")'
 }
 
+const diyConfig = {
+  leftBtn: {
+    slot: <i className='iconfont icon-suoshuhangye'></i>,
+    onClick: () => {
+      Toast.info('触发leftBtn的click事件监听器')
+    }
+  },
+  rightBtn: {
+    slot: <i className='iconfont icon-tuichu'></i>,
+    styles: {
+      color: 'green',
+    },
+    onClick: () => {
+      Toast.info('触发rightBtn的click事件监听器')
+    }
+  },
+  title: 'diy左、右侧按钮'
+}
 
 class ReturnHeaderDemo extends React.Component {
   constructor(props) {
@@ -30,8 +67,9 @@ class ReturnHeaderDemo extends React.Component {
                 <div onClick={this.showPageHanddler.bind(this, `${item.key}Page`)}>{ `${item.key}模式` }</div>
               </List.Item>
           </List> */}
-        <ReturnHeader {...linkMode}/>
         <ReturnHeader {...defaultMode}/>
+        <ReturnHeader {...linkMode}/>
+        <ReturnHeader {...diyConfig}/>
       </div>
     )
   }
