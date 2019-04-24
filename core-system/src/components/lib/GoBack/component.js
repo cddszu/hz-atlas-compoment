@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import creatHistory from 'history/createBrowserHistory'
 const history = creatHistory()
 
-class goBack extends React.Component {
+class GoBack extends React.Component {
   returnHandler() {
     history.goBack()
   }
@@ -17,4 +17,4 @@ class goBack extends React.Component {
   }
 }
 
-export default goBack
+export default GoBack
