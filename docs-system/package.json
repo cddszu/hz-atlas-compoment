@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "port": 3000,
+  "port": 180001,
   "homepage": ".",
   "dependencies": {
     "antd": "^3.11.6",
