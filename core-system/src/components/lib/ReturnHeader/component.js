@@ -2,7 +2,7 @@ import React from 'react'
 import './component.scss'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { GoBack } from 'components/lib'
+import { GoBack } from '../GoBack'
 
 class ReturnHeader extends React.Component {
   // import PropTypes from 'prop-types'
