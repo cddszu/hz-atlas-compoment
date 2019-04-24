@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "port": 180002,
+  "port": 18002,
   "dependencies": {
     "antd-mobile": "^2.2.9",
     "axios": "^0.18.0",
