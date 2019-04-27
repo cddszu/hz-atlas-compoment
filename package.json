@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "concurrently": "^4.1.0",
     "react-scripts": "1.1.4"
   },
   "peerDependencies": {
@@ -13,6 +16,7 @@
     "react-dom": "^16.3.2"
   },
   "scripts": {
+    "dev": "concurrently --kill-others \"cd core-system && yarn start\" \"cd docs-system && yarn start\" ",
     "build": "rm -rf dist && NODE_ENV=production babel core-system/src/components/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
   }
 }

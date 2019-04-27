@@ -1,0 +1,1 @@
+cd core-system && sh run.sh && cd ../docs-system && sh run.sh
