@@ -5,57 +5,21 @@ import AuthRoute from 'components/AuthRoute'
 import Auth from 'components/Auth'
 import LeftNav from 'components/LeftNav'
 import Phone from 'components/Phone'
-import Loadable from 'react-loadable'
-import RouteLoading from 'components/RouteLoading/index'
+// import Loadable from 'react-loadable'
+import Loadable from 'components/Loadable'
 
-const QuickStart = Loadable({
-  loader: () => import('./children/QuickStart'),
-  loading: RouteLoading,
-})
-const Introduce = Loadable({
-  loader: () => import('./children/Introduce'),
-  loading: RouteLoading,
-})
-const Tabs = Loadable({
-  loader: () => import('./children/Tabs'),
-  loading: RouteLoading,
-})
-const TreeSelect = Loadable({
-  loader: () => import('./children/TreeSelect'),
-  loading: RouteLoading,
-})
-const Calendar = Loadable({
-  loader: () => import('./children/Calendar'),
-  loading: RouteLoading,
-})
-const InnerPage = Loadable({
-  loader: () => import('./children/InnerPage'),
-  loading: RouteLoading,
-})
-const GoBack = Loadable({
-  loader: () => import('./children/GoBack'),
-  loading: RouteLoading,
-})
-
-const ReturnHeader = Loadable({
-  loader: () => import('./children/ReturnHeader'),
-  loading: RouteLoading,
-})
-
-const LandscapePage = Loadable({
-  loader: () => import('./children/LandscapePage'),
-  loading: RouteLoading,
-})
-
-const LoadableDoc = Loadable({
-  loader: () => import('./children/LoadableDoc'),
-  loading: RouteLoading,
-})
-const TogglePage = Loadable({
-  loader: () => import('./children/TogglePage'),
-  loading: RouteLoading,
-})
-
+const QuickStart = Loadable(import('./children/QuickStart'))
+const Tabs = Loadable(import('./children/Tabs'))
+const Introduce = Loadable(import('./children/Introduce'))
+const TreeSelect = Loadable(import('./children/TreeSelect'))
+const Calendar = Loadable(import('./children/Calendar'))
+const InnerPage = Loadable(import('./children/InnerPage'))
+const GoBack = Loadable(import('./children/GoBack'))
+const ReturnHeader = Loadable(import('./children/ReturnHeader'))
+const LandscapePage = Loadable(import('./children/LandscapePage'))
+const LoadableDoc = Loadable(import('./children/LoadableDoc'))
+const TogglePage = Loadable(import('./children/TogglePage'))
+const PaginationList = Loadable(import('./children/PaginationList'))
 
 class Main extends React.Component {
   render() {
@@ -121,6 +85,12 @@ class Main extends React.Component {
                 component={withRouter(TogglePage)}
                 permissionPath={[]}
               />
+              <Route
+                path={`${match.url}/paginationList`}
+                component={withRouter(PaginationList)}
+                permissionPath={[]}
+              />
+
               <Route
                 path={`${match.url}/`}
                 component={withRouter(Tabs)}

@@ -14,19 +14,19 @@ const loadStatusConfig = {
 }
 class PaginationList extends React.Component {
   static propTypes = {
-    list: PropTypes.element,
+    content: PropTypes.element,
     totalCount: PropTypes.number,
-    distance: PropTypes.number,
     onPullUp: PropTypes.func,
+    noDataSlot: PropTypes.element,
+    distance: PropTypes.number,
     pageSize: PropTypes.number
   }
 
   static defaultProps = {
-    list: null,
+    content: null,
     totalCount: 0,
-    pageSize: 10,
 
-      // distance表示拉上距离（默认为10px），超过时表示可以加载更多
+    // distance表示拉上距离（默认为10px），超过时表示可以加载更多
     distance: 10,
 
     // 通常对应上拉加载更多处理函数
@@ -34,86 +34,73 @@ class PaginationList extends React.Component {
   }
   constructor(props) {
     super(props)
-    if (this.props.totalCount === 0) {
-      this.loadStatus = 'noData'
-    } else {
-      if (this.props.totalCount < (this.props.pageSize)) {
-        this.loadStatus = "lessThanPageSize"
-      } else {
-        if (this.props.list.props.children.length < this.props.totalCount) {
-          this.loadStatus = 'canLoad'
-        } else {
-          this.loadStatus = 'canNotLoad'
-        }
-      }
-    }
     this.options = {
       click: true,
       mouseWheel: true,
       scrollY: true,
       probeType: 1
     }
-
+    this.state = {
+      loadStateTips: ''
+    }
     this.scrollHandler = this.scrollHandler.bind(this)
     this.scrollEndHandler = this.scrollEndHandler.bind(this)
     this.updateWrapper = this.updateWrapper.bind(this)
-    this.clickLoadTipHandler = this.clickLoadTipHandler.bind(this)
+    this.setLoadStatus = this.setLoadStatus.bind(this)
+    this.setTips = this.setTips.bind(this)
   }
-  setLoadStatus() {
-    if (this.props.totalCount === 0) {
+  /**
+   * @desc 在props数据发生变化时，设置数据的加载状态（静默状态），有四种可能的状态：noData、canLoad、lessThanPageSize和canNotLoad
+   * @param {*} content
+   * @param {*} totalCount
+   * @param {*} pageSize
+   */
+  setLoadStatus(content, totalCount, pageSize) {
+    let contentLength = 0
+    if (totalCount === 0) {
       this.loadStatus = 'noData'
     } else {
-      if (this.props.totalCount < (this.props.pageSize)) {
-        this.loadStatus = "lessThanPageSize"
-      } else {
-        if (this.props.list.props.children.length < this.props.totalCount) {
+      contentLength = content.props.children.length
+      if (contentLength < totalCount) {
+        this.loadStatus = 'canLoad'
+
+        // 拉上距离超过10px时，表示可以加载更多
+        if (
+          this.iScrollInstance &&
+          Math.abs(this.iScrollInstance.y) - Math.abs(this.iScrollInstance.maxScrollY) > this.props.distance
+        ) {
+          this.loadStatus = 'willLoad'
+        } else {
           this.loadStatus = 'canLoad'
+        }
+      } else {
+        if (pageSize !== undefined && (totalCount < pageSize)) {
+          this.loadStatus = "lessThanPageSize"
         } else {
           this.loadStatus = 'canNotLoad'
         }
       }
     }
+    this.setTips()
   }
   scrollHandler () {
     console.log('scrolling')
-    if (this.props.list.props.children.length < this.props.totalCount) {
-
-      // 拉上距离超过10px时，表示可以加载更多
-      if (Math.abs(this.iScrollInstance.y) - Math.abs(this.iScrollInstance.maxScrollY) > this.props.distance) {
-        this.loadStatus = 'willLoad'
-      } else {
-        this.loadStatus = 'canLoad'
-      }
-    } else {
-      this.loadStatus = 'canNotLoad'
-    }
-    this.loadTip.innerHTML = loadStatusConfig[this.loadStatus]
+    const { content, totalCount, pageSize } = this.props
+    this.setLoadStatus(content, totalCount, pageSize)
   }
   scrollEndHandler () {
     console.log('scrollend')
-    if (this.props.list.props.children.length < this.props.totalCount) {
-      if (this.loadStatus === 'willLoad') {
-        this.loadStatus = 'loading'
-        if (this.props.onPullUp) {
-
-          this.props.onPullUp()
-        }
-      } else {
-        this.loadStatus = 'canLoad'
+    if (this.loadStatus === 'willLoad') {
+      this.loadStatus = 'loading'
+      if (this.props.onPullUp) {
+        this.props.onPullUp()
       }
-    } else {
-      this.loadStatus = 'canNotLoad'
-    }
-    this.loadTip.innerHTML = loadStatusConfig[this.loadStatus] || '上拉加载更多'   //TODO: 偶尔报错误信息“TypeError: Cannot set property 'innerHTML' of null”，原因未知
-  }
-  clickLoadTipHandler() {
-    if(this.loadStatus !== 'canNotLoad') {
-      this.props.onPullUp()
     }
   }
+
   updateWrapper() {
     const self = this
-    if (!this.props.totalCount || !this.props.list.props.children.length) {
+    if (!this.props.totalCount || !this.props.content.props.children.length) {
       return
     }
     if (!self.iScrollInstance) {
@@ -124,66 +111,57 @@ class PaginationList extends React.Component {
       self.iScrollInstance.refresh()
     }
   }
+  setTips() {
+    if (this.loadStatus === 'noData' && this.props.noDataSlot) {
+      this.setState({
+        loadStateTips: this.props.noDataSlot
+      })
+    } else {
+      if (this.loadTip) {
+        this.loadTip.innerHTML = loadStatusConfig[this.loadStatus]   //TODO: 偶尔报错误信息“TypeError: Cannot set property 'innerHTML' of null”，原因未知
+      } else {
+        this.setState({
+          loadStateTips: loadStatusConfig[this.loadStatus]
+        })
+      }
+    }
+  }
+  componentWillMount() {
+    const { content, totalCount, pageSize } = this.props
+    this.setLoadStatus(content, totalCount, pageSize)
+  }
   componentDidMount() {
     const self = this
     self.wrapper = ReactDOM.findDOMNode(this)
     // var height = window.innerHeight - self.wrapper.offsetTop - px2rem(window.innerWidth, this.props.bottom)
     this.updateWrapper()
   }
-  // shouldComponentUpdate({ list }, nextState) {
-  //   if (list === this.props.list) {
-  //     return false
-  //   } else {
-  //     return true
-  //   }
-  // }
   componentDidUpdate() {
     // 刷新iscroller组件
     this.updateWrapper()
   }
-  componentWillReceiveProps({ list, totalCount, pageSize }) {
-    // debugger
-    if (list !== this.props.list) {
-      var listLength = list.props.children.length
-      if (totalCount === 0) {
-        this.loadStatus = 'noData'
-      } else {
-        if(totalCount < pageSize){
-          this.loadStatus = "lessThanPageSize"
-        } else {
-          if (listLength < totalCount) {
-            this.loadStatus = 'canLoad'
-          } else {
-            this.loadStatus = 'canNotLoad'
-          }
-        }
-      }
-
-      // 有新的list来，则说明数据加载完毕，取消'加载中‘状态
-      // this.setState({
-      //   loadStatus: loadStatus
-      // })
-      // this.setState({
-      //   loadStatus
-      // })
-      this.loadTip.innerHTML = loadStatusConfig[this.loadStatus]
+  componentWillReceiveProps({ content, totalCount, pageSize }) {
+    if (content !== this.props.content) {
+      this.setLoadStatus(content, totalCount, pageSize)
     }
   }
   render () {
     return (
       <div className="pagination-list-component iscroll-wrapper">
         <div className='iscroll-scroller'>
-          { this.props.list }
-          <div className={`${this.loadStatus === "noData" ? "no-data" : "data-load-tip" }`} onClick={this.clickLoadTipHandler}>
+          { this.props.content }
+          <div
+           className={`${this.loadStatus === "noData" ? "no-data" : "data-load-tip" }`}
+          >
               {
                 (this.loadStatus === 'loading') &&
                 <svg className="spinner" viewBox="0 0 50 50">
                   <circle className="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
                 </svg>
               }
-              <span ref={loadTip => { this.loadTip = loadTip}}>
-                { loadStatusConfig[this.loadStatus] }
-              </span>
+              <p ref={loadTip => { this.loadTip = loadTip}}>
+                { this.state.loadStateTips }
+              </p>
           </div>
           </div>
       </div>

@@ -2,21 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './component.scss'
 import AuthRoute from 'components/AuthRoute/index.js'
-import Loadable from 'react-loadable'
-import RouteLoading from 'components/RouteLoading/index'
+import Loadable from 'components/Loadable'
 import Header from 'components/Header'
 
 import { BrowserRouter as Router, Route, Switch, withRouter , HashRouter  } from 'react-router-dom'
 
-const Home = Loadable({
-  loader: () => import('./children/Home/index'),
-  loading: RouteLoading
-})
-
-const Main = Loadable({
-  loader: () => import('./children/Main/index'),
-  loading: RouteLoading
-})
+const Home = Loadable(import('./children/Home'))
+const Main = Loadable(import('./children/Main'))
 
 class Root extends React.Component {
   componentWillMount() {
@@ -29,9 +21,9 @@ class Root extends React.Component {
         <div className='root-component-router'>
           <HashRouter>
             <Switch>
-              <Route  path={`${match.url}/home`} component={Home} />
+              <Route  path={`${match.url}/home`} component={withRouter(Home)} />
               <Route  path={`${match.url}/main`} component={Main} />
-              <Route exact path={'/'} component={Home} />
+              <Route exact path={'/'} component={withRouter(Home)} />
             </Switch>
           </HashRouter>
         </div>

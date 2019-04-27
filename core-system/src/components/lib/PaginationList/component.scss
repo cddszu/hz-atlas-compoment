@@ -13,9 +13,12 @@
     right: 0;
     top: 0;
     bottom: 0;
-    height: 24px;
-    width: 120px;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 24px;
+    // width: 120px;
+    // margin: auto;
     color: #8B8B8D;
     font-size: 24px;
     text-align: center;

@@ -17,7 +17,7 @@ class Phone extends React.Component {
   render() {
     return (
       <div className='phone-component' draggable>
-        <iframe src={`http://localhost:18002/#/root/demos/${this.props.to}`} scrolling='no'></iframe>
+        <iframe src={`http://localhost:18002/#/root/demos/${this.props.to}`}></iframe>
       </div>
     )
   }
