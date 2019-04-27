@@ -1,8 +1,8 @@
 import React from 'react'
 import './component.scss'
 import ReactMarkdown from 'react-markdown'
-import  mdPth from './button.md'
-class Home extends React.Component {
+import  mdPth from './doc-CN.md'
+class QuickStart extends React.Component {
 
   constructor(props) {
     super(props)
@@ -22,11 +22,11 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className='home-component'>
+      <div className='quickStart-component'>
         <ReactMarkdown className='markdown' source={ this.state.terms }   escapeHtml={ false }/>
       </div>
     )
   }
 }
 
-export default Home
+export default QuickStart

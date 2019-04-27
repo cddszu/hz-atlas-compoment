@@ -35,8 +35,8 @@ class LeftNav extends React.Component {
         mode='inline'
       >
         <SubMenu title='概述'>
-          <Item>介绍</Item>
-          <Item>快速上手</Item>
+          <Item><Link to='/root/main/introduce'>介绍</Link></Item>
+          <Item><Link to='/root/main/quickStart'>快速上手</Link></Item>
         </SubMenu>
         <SubMenu title='组件'>
           {/* <Item>PaginationList(分页列表)</Item>

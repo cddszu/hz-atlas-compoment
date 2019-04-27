@@ -1,29 +1,35 @@
+## hz-react-mobile
+
+这里是 Hz Mobile 的 React 实现，服务于 H5 移动端。
+
+<div class="pic-plus">
+  <img width="150" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg">
+  <span>+</span>
+  <img width="160" src="https://gw.alipayobjects.com/zos/rmsportal/tXlLQhLvkEelMstLyHiN.svg">
+</div>
+
+<style>
+.pic-plus > * {
+  display: inline-block !important;
+  vertical-align: middle;
+}
+.pic-plus span {
+  font-size: 30px;
+  color: #aaa;
+  margin: 0 20px;
+}
+</style>
+
 ---
-PaginationList 分页列表
----
 
-通过滚动的方式实现分页
+## 特性
 
-## 实现说明
-- 基于Iscroll实现
--
+- 提炼自九江移动端和兰州移动端的交互方式和视觉风格。
+- 开箱即用的高质量 React 组件。
 
-## API(props)
+## 支持环境
 
-### 基本属性
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| from | 值有top, right, bottom, left，用于配置当前组件从哪个方向切出
+* 移动端
 
-### 事件（方法）
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| show | 用于显示当前组件 | --- | --- |
-| hide | 用于隐藏当前组件 | --- | --- |
-
-### slot
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
-
-
+## 版本
+1.0.0

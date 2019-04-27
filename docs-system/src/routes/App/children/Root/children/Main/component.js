@@ -7,10 +7,10 @@ import LeftNav from 'components/LeftNav'
 import Phone from 'components/Phone'
 // import Loadable from 'react-loadable'
 import Loadable from 'components/Loadable'
+const Introduce = Loadable(import('./children/Introduce'))
 
 const QuickStart = Loadable(import('./children/QuickStart'))
 const Tabs = Loadable(import('./children/Tabs'))
-const Introduce = Loadable(import('./children/Introduce'))
 const TreeSelect = Loadable(import('./children/TreeSelect'))
 const Calendar = Loadable(import('./children/Calendar'))
 const InnerPage = Loadable(import('./children/InnerPage'))

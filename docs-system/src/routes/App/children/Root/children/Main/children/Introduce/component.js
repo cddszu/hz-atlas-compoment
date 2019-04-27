@@ -7,7 +7,7 @@ import Phone from 'components/Phone'
 // import { importMDX } from 'mdx.macro'
 // const Content = importMDX('./content.mdx')
 
-class PaginationList extends React.Component {
+class Introduce extends React.Component {
 
   constructor(props) {
     super(props)
@@ -27,8 +27,8 @@ class PaginationList extends React.Component {
 
   render() {
     return (
-      <div className='paginationList-component'>
-        <Phone to='paginationList' />
+      <div className='Introduce-component'>
+        <Phone to='Introduce' />
         {/* <Content/> */}
         <ReactMarkdown className='markdown' source={ this.state.terms }   escapeHtml={ false }/>
       </div>
@@ -36,4 +36,4 @@ class PaginationList extends React.Component {
   }
 }
 
-export default PaginationList
+export default Introduce
