@@ -1,37 +1,24 @@
 import React from 'react'
-import { DatePickerView } from 'antd-mobile'
-
-import styles from './component.module.scss'
-import {withRouter} from "react-router"
-
-class Header extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
+import Loadable from 'react-loadable'
+const Loading = (props) => {
+  if (props.isLoading) {
+    if (props.timedOut) {
+      return <div>Loader timed out!</div>;
+    } else if (props.pastDelay) {
+      return <div>Loading...</div>;
+    } else {
+      return null;
     }
-  }
-  componentWillMount() {
-  }
-
-  componentWillReceiveProps() {
-  }
-
-  render() {
-    return (
-      <header>
-        <div>
-          <div class="logo">
-            <a href="./index.html"><img src="./images/logo1.png" alt=""></a>
-            </div>
-            <div class="nav">
-              <a href="#">组件</a>
-              <a href="#">关于</a>
-            </div>
-        </div>
-    </header>
-    )
+  } else if (props.error) {
+    return <div>Error! Component failed to load</div>;
+  } else {
+    return null;
   }
 }
 
-export default withRouter(Header)
+export default (Component) => {
+  return Loadable({
+    loader: () => Component,
+    loading: Loading,
+  })
+}

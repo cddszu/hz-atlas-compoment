@@ -8,6 +8,7 @@ import ReturnHeader from './ReturnHeader'
 import Tabs from './Tabs'
 import TogglePage from './TogglePage'
 import TreeSelect from './TreeSelect'
+import PaginationList from './PaginationList'
 import Loadable from './Loadable'
 export {
   Tabs,
@@ -18,5 +19,6 @@ export {
   ReturnHeader,
   TogglePage,
   Loadable,
-  TreeSelect
+  TreeSelect,
+  PaginationList
 }

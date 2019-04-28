@@ -7,6 +7,7 @@ const demos = [
   {title: 'InnerPage 内页', to: 'innerPage'},
   {title: 'TogglePage 切页', to: 'togglePage'},
   {title: 'LandscapePage 横屏页', to: 'landscapePage'},
+  {title: 'PaginationList 分页列表', to: 'paginationList'},
   {title: 'GoBack 返回', to: 'goBack'},
   {title: 'Calendar 日历', to: 'calendar'},
   {title: 'TreeSelect 树选择', to: 'treeSelect'},

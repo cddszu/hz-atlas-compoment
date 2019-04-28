@@ -27,8 +27,8 @@ class ToggglePage extends React.Component {
 
   render() {
     return (
-      <div className='toggglePage-component'>
-        <Phone to='toggglePage' />
+      <div className='togglePage-component'>
+        <Phone to='togglePage' />
         {/* <Content/> */}
         <ReactMarkdown className='markdown' source={ this.state.terms }   escapeHtml={ false }/>
       </div>

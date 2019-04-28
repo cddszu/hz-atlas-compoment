@@ -28,7 +28,7 @@ class InnerPage extends React.Component {
   render() {
     return (
       <div className='innerPage-component'>
-        <Phone to='innerPage' />
+        <Phone to='returnHeader' />
         {/* <Content/> */}
         <ReactMarkdown className='markdown' source={ this.state.terms }   escapeHtml={ false }/>
       </div>

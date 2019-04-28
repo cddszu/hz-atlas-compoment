@@ -2,7 +2,11 @@ const express = require('express');
 const compression = require('compression');
 const app = express();
 app.use(compression());
+<<<<<<< HEAD
 const port = process.env.PORT || 18003;
+=======
+const port = process.env.PORT || 18001;
+>>>>>>> c8d2c12d8a263cbe5742a40a92937167fabd5d2f
 const path = require('path');
 const mockRouter = require('./mock');
 const proxy = require('http-proxy-middleware');

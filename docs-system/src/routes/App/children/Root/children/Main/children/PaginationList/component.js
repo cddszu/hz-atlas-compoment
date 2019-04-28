@@ -2,7 +2,12 @@ import React from 'react'
 import './component.scss'
 import ReactMarkdown from 'react-markdown'
 import  mdPth from './doc-CN.md'
-class QuickStart extends React.Component {
+import Phone from 'components/Phone'
+
+// import { importMDX } from 'mdx.macro'
+// const Content = importMDX('./content.mdx')
+
+class PaginationList extends React.Component {
 
   constructor(props) {
     super(props)
@@ -22,11 +27,13 @@ class QuickStart extends React.Component {
 
   render() {
     return (
-      <div className='quickStart-component'>
+      <div className='paginationList-component'>
+        <Phone to='paginationList' />
+        {/* <Content/> */}
         <ReactMarkdown className='markdown' source={ this.state.terms }   escapeHtml={ false }/>
       </div>
     )
   }
 }
 
-export default QuickStart
+export default PaginationList
