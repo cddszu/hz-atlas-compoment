@@ -16,8 +16,6 @@ class Phone extends React.Component {
   }
 
   render() {
-    let initX = (window.document.documentElement.clientWidth - 256 ) * 0.7
-    let initY = window.document.documentElement.clientHeight  - 10
     return (
       <div className='phone-component'>
       <Rnd
