@@ -34,11 +34,18 @@ class PaginationList extends React.Component {
   }
   constructor(props) {
     super(props)
+    var userAgent = window.navigator.userAgent || window.navigator.vendor || window.opera;
+
     this.options = {
-      click: true,
+      click: true, // 部分安卓手机click为false时，list item 的click事件不会被触发
       mouseWheel: true,
       scrollY: true,
       probeType: 1
+    }
+
+    // iPhone将clik配置为true时，list item的click事件单击不会被触发，需要快速双击两次；而设为false时，则正常
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      this.options.click = false
     }
     this.state = {
       loadStateTips: ''
