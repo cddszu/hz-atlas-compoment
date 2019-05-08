@@ -1,1 +1,1 @@
-cd core-system && sh run.sh && cd ../docs-system && sh run.sh
+cd core-system && yarn build && sh run.sh && cd ../docs-system && yarn build && sh run.sh
