@@ -30,27 +30,35 @@ class PaginationList extends React.Component {
 		// distance表示拉上距离（默认为10px），超过时表示可以加载更多
 		distance: 10,
 
-		// 通常对应上拉加载更多处理函数
-		onPullUp: null,
-	}
-	constructor(props) {
-		super(props)
-		this.options = {
-			click: true,
-			mouseWheel: true,
-			scrollY: true,
-			probeType: 1,
-		}
-		this.state = {
-			loadStateTips: '',
-		}
-		this.scrollHandler = this.scrollHandler.bind(this)
-		this.scrollEndHandler = this.scrollEndHandler.bind(this)
-		this.updateWrapper = this.updateWrapper.bind(this)
-		this.setLoadStatus = this.setLoadStatus.bind(this)
-		this.setTips = this.setTips.bind(this)
-	}
-	/**
+    // 通常对应上拉加载更多处理函数
+    onPullUp: null
+  }
+  constructor(props) {
+    super(props)
+    var userAgent = window.navigator.userAgent || window.navigator.vendor || window.opera;
+
+    this.options = {
+      click: true, // 部分安卓手机click为false时，list item 的click事件不会被触发
+      mouseWheel: true,
+      scrollY: true,
+      probeType: 1
+    }
+
+    // iPhone将clik配置为true时，list item的click事件单击不会被触发，需要快速双击两次；而设为false时，则正常
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      this.options.click = false
+    }
+    this.state = {
+      loadStateTips: ''
+    }
+    this.scrollHandler = this.scrollHandler.bind(this)
+    this.scrollEndHandler = this.scrollEndHandler.bind(this)
+    this.updateWrapper = this.updateWrapper.bind(this)
+    this.setLoadStatus = this.setLoadStatus.bind(this)
+    this.setTips = this.setTips.bind(this)
+  }
+  /**
+
    * @desc 在props数据发生变化时，设置数据的加载状态（静默状态），有四种可能的状态：noData、canLoad、lessThanPageSize和canNotLoad
    * @param {*} content
    * @param {*} totalCount

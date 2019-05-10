@@ -65,7 +65,7 @@ class PaginationListDemo extends React.Component {
   }
   render () {
     const { basicConfig, list  } = this.state
-    basicConfig.content = <div>{ list.map(item => <List.Item arrow="horizontal">{ item.name }</List.Item>) }</div>
+    basicConfig.content = <div>{ list.map((item, index) => <List.Item arrow="horizontal" onClick={() => { window.alert('item' + (index + 1)) }}>{ item.name + ': click me' }</List.Item>) }</div>
     return (
       <div className="paginationList-demo-component">
         基本用法
