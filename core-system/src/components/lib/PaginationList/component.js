@@ -128,7 +128,13 @@ class PaginationList extends React.Component {
 				})
 			}
 		}
+  }
+
+  // 禁止浏览器默认事件
+	preventDefault(e) {
+		e.preventDefault()
 	}
+
 	componentWillMount() {
 		const { content, totalCount, pageSize } = this.props
 		this.setLoadStatus(content, totalCount, pageSize)
@@ -137,7 +143,10 @@ class PaginationList extends React.Component {
 		const self = this
 		self.wrapper = ReactDOM.findDOMNode(this)
 		// var height = window.innerHeight - self.wrapper.offsetTop - px2rem(window.innerWidth, this.props.bottom)
-		this.updateWrapper()
+    this.updateWrapper()
+
+    // 解决某些安卓手机上滑不动问题
+		document.addEventListener('touchmove', this.preventDefault, false)
 	}
 	componentDidUpdate() {
 		// 刷新iscroller组件
@@ -152,26 +161,36 @@ class PaginationList extends React.Component {
 		return (
 			<div className="pagination-list-component iscroll-wrapper">
 				{this.loadStatus !== 'beforeFetchData' ? (
-					<div className="iscroll-scroller">
-						{this.props.content}
-						<div className={`${this.loadStatus === 'noData' ? 'no-data' : 'data-load-tip'}`}>
-							{this.loadStatus === 'loading' && (
-								<svg className="spinner" viewBox="0 0 50 50">
-									<circle className="path" cx="25" cy="25" r="20" fill="none" stroke-width="5" />
-								</svg>
-							)}
-							<p
-								ref={loadTip => {
-									this.loadTip = loadTip
-								}}
-							>
-								{this.state.loadStateTips}
-							</p>
+          // 解决无数据状态下，loadTip保持上一次状态，noDataSlot不显示
+					this.loadStatus === 'noData' ? (
+						<div class="no-data">{this.state.loadStateTips}</div>
+					) : (
+						<div className="iscroll-scroller">
+							{this.props.content}
+							<div className='data-load-tip'>
+								{this.loadStatus === 'loading' && (
+									<svg className="spinner" viewBox="0 0 50 50">
+										<circle className="path" cx="25" cy="25" r="20" fill="none" stroke-width="5" />
+									</svg>
+								)}
+								<p
+									ref={loadTip => {
+										this.loadTip = loadTip
+									}}
+								>
+									{this.state.loadStateTips}
+								</p>
+							</div>
 						</div>
-					</div>
+					)
 				) : null}
 			</div>
 		)
+  }
+
+  componentWillUnmount() {
+    // 解除对应事件绑定
+		document.removeEventListener('touchmove', this.preventDefault, false)
 	}
 }
 
