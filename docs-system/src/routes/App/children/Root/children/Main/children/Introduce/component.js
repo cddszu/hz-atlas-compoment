@@ -3,6 +3,7 @@ import './component.scss'
 import ReactMarkdown from 'react-markdown'
 import  mdPth from './doc-CN.md'
 import Phone from 'components/Phone'
+import Logo from './images/logo.svg'
 
 // import { importMDX } from 'mdx.macro'
 // const Content = importMDX('./content.mdx')
@@ -31,6 +32,7 @@ class Introduce extends React.Component {
         <Phone to='Introduce' />
         {/* <Content/> */}
         <ReactMarkdown className='markdown' source={ this.state.terms }   escapeHtml={ false }/>
+
       </div>
     )
   }

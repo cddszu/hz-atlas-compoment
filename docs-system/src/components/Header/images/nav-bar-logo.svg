@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="263px" height="50px" viewBox="0 0 263 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>nav-bar-logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="自定义搜索门户列表-0521" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="nav-bar-logo">
+            <rect id="矩形" fill-opacity="0" fill="#D8D8D8" opacity="0" x="0" y="0" width="264" height="50"></rect>
+            <g id="logofin-01备份" transform="translate(-0.000000, 0.000000)" fill-rule="nonzero">
+                <polygon id="路径" fill="#E94E53" points="31.9362745 18.627451 31.9362745 17.8921569 5.29411765 19.9019608 5.29411765 20.6617647"></polygon>
+                <polygon id="路径" fill="#E94E53" points="32.4019608 16.3970588 33.0882353 16.1029412 28.4803922 6.29901961 27.7941176 6.54411765"></polygon>
+                <polygon id="路径" fill="#E94E53" points="49.5588235 21.004902 49.5098039 20.245098 35.6862745 17.9411765 35.4901961 18.6764706"></polygon>
+                <polygon id="路径" fill="#E94E53" points="13.1862745 42.5245098 11.9607843 43.0637255 3.28431373 21.3235294 3.7745098 20.9803922"></polygon>
+                <polygon id="路径" fill="#E94E53" points="32.622549 19.5343137 15.7107843 42.9656863 16.6666667 43.9215686 33.1862745 19.9019608"></polygon>
+                <polygon id="路径" fill="#266DB6" points="2.94117647 19.6813725 24.4607843 4.53431373 25.2941176 6.29901961 4.16666667 20.1470588"></polygon>
+                <polygon id="路径" fill="#266DB6" points="17.7205882 45.5147059 49.6568627 22.0588235 49.1911765 21.4215686 16.2990196 43.6519608"></polygon>
+                <circle id="椭圆形" fill="#266DB6" cx="50.3431373" cy="20.9068627" r="2.23039216"></circle>
+                <circle id="椭圆形" fill="#266DB6" cx="2.94117647" cy="20.3921569" r="2.94117647"></circle>
+                <circle id="椭圆形" fill="#E94E53" cx="33.8480392" cy="17.9656863" r="2.42647059"></circle>
+                <polygon id="路径" fill="#266DB6" points="25.2941176 6.76470588 13.6764706 41.8627451 16.2009804 42.6470588 27.4509804 6.76470588"></polygon>
+                <circle id="椭圆形" fill="#266DB6" cx="27.0343137" cy="4.01960784" r="3.79901961"></circle>
+                <circle id="椭圆形" fill="#266DB6" cx="13.9215686" cy="45.5147059" r="4.31372549"></circle>
+            </g>
+            <text id="hz-react-mobile" font-family="PingFangSC-Regular, PingFang SC" font-size="26" font-weight="normal" line-spacing="26" fill="#266DB6">
+                <tspan x="63" y="40">hz-react-mobile</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

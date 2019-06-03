@@ -1,7 +1,7 @@
 import React from 'react'
 import './component.scss'
 import {withRouter} from "react-router"
-import Logo from './images/logo1.png'
+import Logo from './images/nav-bar-logo.svg'
 class Header extends React.Component {
   constructor(props) {
     super(props)
