@@ -1,0 +1,199 @@
+.role-modal {
+  .role-select-body {
+    .project-container {
+      float: left;
+      width: 202px;
+
+      &::after {
+        content: '';
+        width: 1px;
+        height: 430px;
+        background-color: #C3CACF;
+        position: absolute;
+        bottom: 0;
+        left: 202px;
+      }
+
+      .project-list {
+        height: 390px;
+        color: #5B5B5B;
+        overflow: auto;
+
+        .project-item {
+          height: 60px;
+          line-height: 60px;
+          padding: 0 30px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          position: relative;
+
+          &:hover {
+            background-color: #F5F5F5;
+            font-weight: 600;
+            color: #42444C;
+            cursor: pointer;
+          }
+
+          &.active {
+            background-color: #F5F5F5;
+            font-weight: 600;
+            color: #42444C;
+            cursor: pointer;
+
+            .iconfont {
+              display: inline-block;
+              transform: rotate(180deg);
+              vertical-align: top;
+              color: #C3CACF;
+              font-size: 13px;
+              font-weight: 400;
+              position: absolute;
+              right: 18px;
+            }
+
+            &::before {
+              content: '';
+              width: 4px;
+              height: 20px;
+              background-color: #4CB5B6;
+              border-radius: 2px;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              margin-top: -10px;
+            }
+          }
+        }
+      }
+    }
+
+    .role-container {
+      float: left;
+      width: 620px;
+      height: 300px;
+      padding: 20px 0 0 40px;
+      overflow: auto;
+
+      .role-wrapper {
+        margin-top: 30px;
+
+        &:first-child {
+          margin-top: 0;
+
+          .role-title {
+            &::before {
+              content: '';
+              width: 4px;
+              height: 14px;
+              background-color: #4CB5B6;
+              border-radius: 2px;
+              position: absolute;
+              top: 0;
+              left: -10px;
+            }
+          }
+
+          .role-list {
+            margin-left: -10px;
+          }
+        }
+
+        .role-title {
+          position: relative;
+          color: #42444C;
+          line-height: 14px;
+          font-weight: 600;
+        }
+
+        .role-list {
+          .role-item {
+            display: inline-block;
+            margin: 16px 16px 0 0;
+            padding: 10px;
+            background-color: #F2F2F2;
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 18px;
+            color: #5B5B5B;
+            cursor: pointer;
+
+            .iconfont {
+              display: inline-block;
+              line-height: 18px;
+              vertical-align: text-bottom;
+              margin-right: 10px;
+              color: #5B5B5B;
+            }
+
+            &:hover,
+            &.active {
+              background-color: #4CB5B6;
+              color: #FFFFFF;
+
+              .iconfont {
+                color: #FFFFFF;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .role-modal {
+    .ant-modal-content {
+      height: 500px;
+      padding: 0;
+  
+      .ant-modal-close {
+        padding-right: 20px;
+        color: #c3cacf;
+        height: 80px;
+        line-height: 80px;
+        .ant-modal-close-x {
+          display: block;
+          width: 56px;
+          height: 56px;
+          font-size: 16px;
+          font-style: normal;
+          line-height: 56px;
+          text-align: center;
+          text-transform: none;
+          text-rendering: auto;
+        }
+      }
+      .ant-modal-body {
+        max-height: 650px;
+        padding: 30px 30px 30px 0;
+        text-align: left;
+      }
+      .ant-modal-header {
+        padding: 30px 0 0 30px;
+        border: none;
+        .ant-modal-title {
+          width: 172px;
+  
+          &::after {
+            content: '';
+            width: 1px;
+            height: 80px;
+            background-color: #C3CACF;
+            position: absolute;
+            top: 0;
+            left: 202px;
+          }
+        }
+      }
+  
+  
+      .ant-modal-footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding-right: 32px;
+        padding-bottom: 40px;
+      }
+    }
+  }
+  
+}

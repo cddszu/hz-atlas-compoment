@@ -1,0 +1,167 @@
+.hz-atlas-header {
+  display: inline-block;
+  height: 48px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-image: url('./images/bg.png');
+  background-size: cover;
+  background-position: center;
+
+  .loginOut {
+    float: right;
+    color: #fff;
+    font-size: 14px;
+    line-height: 45px;
+    padding: 0 10px;
+  }
+  .logo {
+    float: left;
+    background: url(./images/stargraph.svg) no-repeat center center;
+    background-size: 100%;
+    width: 112px;
+    height: 32px;
+    margin-top: 9px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  .logo_title {
+    font-size: 16px;
+    color: #fff;
+    line-height: 48px;
+    padding-left: 10px;
+    border-left: 2px solid #fff;
+    margin-left: 10px;
+  }
+  .header-right {
+    float: right;
+    height: 100%;
+    margin-right: 19px;
+    color: #fff;
+    cursor: pointer;
+
+    .account-box {
+      position: relative;
+      float: right;
+      height: 100%;
+      color: #fff;
+      line-height: 48px;
+      cursor: pointer;
+
+      .pop-ul {
+        display: block;
+        top: 50px;
+        z-index: 222;
+      }
+
+      &:hover {
+        .pop-ul {
+          display: block;
+        }
+      }
+
+      .account-portrait {
+        font-size: 19px;
+      }
+      .account-name {
+        display: inline-block;
+        margin-left: 4px;
+        color: #fff;
+        vertical-align: top;
+      }
+      .arrow-down {
+        margin-left: 3px;
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 8px;
+          height: 10px;
+          border-top: 5px solid #fff;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-bottom: 5px solid transparent;
+        }
+      }
+      .pop-ul {
+        position: absolute;
+        display: none;
+        top: 48px;
+        right: -5px;
+        padding: 8px 0;
+        width: 107px;
+        background-color: #fff;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
+        .pop-li {
+          list-style-type: none;
+          height: 32px;
+          line-height: 32px;
+
+          .pop-li-a {
+            display: block;
+            color: #999;
+            text-align: center;
+            margin: 0 auto;
+            width: 90%;
+            height: 100%;
+            cursor: pointer;
+            // border-bottom: 1px solid #fbfbfb;
+          }
+
+          &:hover {
+            .pop-li-a {
+              color: #333;
+            }
+
+            background-color: #F0F0F0;
+          }
+        }
+      }
+    }
+    .role-name {
+      position: relative;
+      float: left;
+      height: 56px;
+      margin-right: 30px;
+      color: #fff;
+
+      span {
+        line-height: 56px
+      }
+    }
+  }
+  .nologin {
+    float: right;
+    height: 100%;
+    margin-right: 24px;
+    h1 {
+      font-size: 16px;
+      color: #fff;
+      height: 100%;
+      line-height: 48px;
+      cursor: pointer;
+    }
+  }
+}
+.password_box {
+  width: 500px !important;
+  .password_input {
+    font-size: 12px;
+    margin-left: 10px
+  }
+  .has-error .ant-form-explain {
+    text-align: left !important;
+    margin-left: 10px;
+    font-size: 12px !important
+  }
+}
+
+.header_role {
+  color: #fff;
+  font-size: 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  position: relative;
+  // top: -4px;
+}
