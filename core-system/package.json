@@ -4,6 +4,7 @@
   "private": true,
   "port": 18002,
   "dependencies": {
+    "antd": "^3.20.2",
     "antd-mobile": "^2.2.9",
     "axios": "^0.18.0",
     "cookie-parser": "^1.4.4",

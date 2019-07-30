@@ -26,7 +26,3 @@
 .hide {
   display: none;
 }
-
-@function funFixRem($val) {
-  @return $val/108;
-}

@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './component.scss'
 import AuthRouter from 'components/AuthRouter'
+import Header from 'components/lib/Header'
 
-import Login from './children/Login'
-import Test from './children/Test'
-import Demos from './children/Demos'
+// import Login from './children/Login'
+// import Test from './children/Test'
+// import Demos from './children/Demos'
 import { BrowserRouter as Router, Route, Switch, withRouter , HashRouter  } from 'react-router-dom'
 
 class Root extends React.Component {
@@ -27,11 +28,12 @@ class Root extends React.Component {
           todo 切换路由的时候会初始化header，导致权限接口重复调用
         */}
         <div className='root-component-router'>
+        <Header></Header>
           <HashRouter>
             <Switch>
-              <Route path={`${match.url}/login`} component={Login}></Route>
-              <Route path={`${match.url}/demos`} component={Demos}></Route>
-              <Route path={'/'} component={Demos}></Route>
+              {/* <Route path={`${match.url}/login`} component={Login}></Route> */}
+              {/* <Route path={`${match.url}/demos`} component={Demos}></Route> */}
+              {/* <Route path={'/'} component={Demos}></Route> */}
             </Switch>
           </HashRouter>
         </div>

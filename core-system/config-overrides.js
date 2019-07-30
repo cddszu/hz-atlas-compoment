@@ -20,12 +20,12 @@ module.exports = {
       javascriptEnabled: true,
       // modifyVars: { "@primary-color": "#D24545" } // 深红色
     }),
-    addPostcssPlugins([
-      px2rem({
-        remUnit: 75,
-        exclude: /node_modules|antd-mobile/i
-      })
-    ]),
+    // addPostcssPlugins([
+    //   px2rem({
+    //     remUnit: 75,
+    //     exclude: /node_modules|antd-mobile/i
+    //   })
+    // ]),
   ),
   devServer: overrideDevServer(
     // dev server plugin
