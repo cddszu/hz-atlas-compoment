@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import './component.scss'
 import AuthRouter from 'components/AuthRouter'
 import Header from 'components/lib/Header'
+import HzNav from 'components/lib/HzNav'
+import DemoNav from './children/DemoNav'
 
 // import Login from './children/Login'
 // import Test from './children/Test'
@@ -28,12 +30,11 @@ class Root extends React.Component {
           todo 切换路由的时候会初始化header，导致权限接口重复调用
         */}
         <div className='root-component-router'>
-        <Header></Header>
           <HashRouter>
             <Switch>
-              {/* <Route path={`${match.url}/login`} component={Login}></Route> */}
-              {/* <Route path={`${match.url}/demos`} component={Demos}></Route> */}
-              {/* <Route path={'/'} component={Demos}></Route> */}
+              <Route path={`${match.url}/Header`} component={Header}></Route>
+              <Route path={`${match.url}/HzNav`} component={HzNav}></Route>
+              <Route path={`${match.url}`} component={DemoNav}></Route>
             </Switch>
           </HashRouter>
         </div>

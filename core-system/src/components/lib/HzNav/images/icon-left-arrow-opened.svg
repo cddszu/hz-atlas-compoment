@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="70px" viewBox="0 0 10 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>-Collapse</title>
+    <desc>Created with Sketch.</desc>
+    <g id="UI-规范" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(-427.000000, -496.000000)">
+            <g id="分组-2" transform="translate(427.000000, 496.000000)">
+                <path d="M0,29.0823292 L0,40.9176708 L0,70 C0,70 10,64.9858053 10,57.9659327 L10,40.9176708 L10,29.0823292 L10,12.0340673 C10,5.01419469 0,0 0,0 L0,29.0823292 Z" id="Fill-1" fill="#49527B" transform="translate(5.000000, 35.000000) scale(-1, 1) translate(-5.000000, -35.000000) "></path>
+                <path d="M7.8700311,33.8556257 L5.30351789,36.8533654 C5.22683372,36.9465792 5.11625541,37 5.00011606,37 C4.88397672,37 4.7734336,36.9466168 4.69672303,36.8533654 L2.13020102,33.8556257 C2.00488421,33.7142824 1.96617697,33.5082495 2.03093835,33.3263049 C2.09569095,33.1443508 2.25198059,33.0172932 2.43359405,33 L7.56450869,33 C7.74684368,33.0165601 7.90381965,33.1428471 7.96857224,33.3255718 C8.03405516,33.5082495 7.99531271,33.7135493 7.8700311,33.8556257 Z" id="Fill-1" fill="#FFFFFF" transform="translate(5.000000, 35.000000) rotate(-270.000000) translate(-5.000000, -35.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

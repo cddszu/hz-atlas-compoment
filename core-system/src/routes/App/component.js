@@ -9,9 +9,9 @@ import { LocaleProvider } from 'antd-mobile'
 import 'moment/locale/zh-cn'
 import AuthRouter from 'components/AuthRouter/index.js'
 
-import 'styles/less/main.less'
+// import 'styles/less/main.less'
 import 'styles/sass/main.scss'
-import './component.scss'
+import './component.less'
 import Root from './children/Root/index'
 
 class App extends Component {

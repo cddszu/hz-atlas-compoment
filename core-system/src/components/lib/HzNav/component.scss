@@ -1,0 +1,164 @@
+@import 'styles/common/_base.scss';
+.nav-container {
+  position: relative;
+  float: left;
+  margin-top: -1px;
+  height: 100%;
+  z-index: 99;
+  .project-nav {
+    float: left;
+    padding-top: 20px;
+    width: 50px;
+    height: 100%;
+    border-top:1px solid rgba(255,255,255,0.0482);
+    background-image: url('./images/bg.png');
+    background-color: #383F5A;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .project-icon {
+      padding: 8px 0;
+      text-align: center;
+      color: #A2B3C3;
+      box-sizing: border-box;
+      margin-bottom: 8px;
+      .iconfont {
+        display: block;
+        height: 20px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 8px;
+        &.icon-dataplatform {
+          background-image: url('./images/icon-dataplatform.png');
+        }
+        &.icon-analysisplatform {
+          background-image: url('./images/icon-analysisplatform.png');
+        }
+        &.icon-miningplatform {
+          background-image: url('./images/icon-miningplatform.png');
+        }
+        &.icon-applicationplatform {
+          background-image: url('./images/icon-applicationplatform.png');
+        }
+        &.icon-systemplatform {
+          background-image: url('./images/icon-systemplatform.png');
+        }
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &.active {
+        color: #4CB5B6;
+        border-left: 2px solid #4CB5B6;
+        background:#333a55;
+        opacity:0.7;
+        .iconfont {
+          margin-left: -2px;
+          &.icon-dataplatform {
+            background-image: url('./images/icon-dataplatform-active.png');
+          }
+          &.icon-analysisplatform {
+            background-image: url('./images/icon-analysisplatform-active.png');
+          }
+          &.icon-miningplatform {
+            background-image: url('./images/icon-miningplatform-active.png');
+          }
+          &.icon-applicationplatform {
+            background-image: url('./images/icon-applicationplatform-active.png');
+          }
+          &.icon-systemplatform {
+            background-image: url('./images/icon-systemplatform-active.png');
+          }
+        }
+      }
+    }
+  }
+  .back-btn-closed {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    width: 10px;
+    height: 70px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: url('./images/icon-left-arrow-closed.svg') no-repeat;
+    transition: opacity 1.8s ease 0s;
+  }
+
+  
+
+  .sub-nav {
+    margin-left: 50px;
+    width: 200px;
+    height: 100%;
+    background: #333A55;
+    transition: opacity 0.1s, width 0.2s;
+
+    &.shrink {
+      opacity: 0;
+      width: 0;
+      visibility: hidden;
+    }
+
+    .sub-nav-title {
+      padding-left: 24px;
+      padding-right: 24px;
+      color: #fff;
+      line-height: 67px;
+      border-bottom: 1px solid #2D334D;
+
+      .back-btn {
+        position: absolute;
+        z-index: 999;
+        right: 0;
+        top: calc(50% - 35px);
+        width:10px;
+        height:70px;
+        background-image: url('./images/icon-left-arrow-opened.svg');
+        background-size: cover;
+        background-position: center;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .open-btn {
+        right: -10px;
+        background-image: url('./images/icon-left-arrow-closed.svg');
+      }
+    }
+
+    .menu-container {
+      height: 100%;
+      user-select: none;
+      padding-bottom: 80px;
+
+      .ant-menu {
+        height: 100%;
+        overflow: auto;
+        @include scroll-style;
+        background: transparent;
+        color: #A2B3C3;
+        font-size: 12px;
+        .ant-menu-submenu .ant-menu-submenu-title,
+        .ant-menu-item {
+          height: 50px;
+          line-height: 50px;
+          font-size: 12px;
+          margin-top: 0;
+          margin-bottom: 0;
+          a.active {
+            color: #4CB5B6;
+            background: #333A55;
+          }
+        }
+        .ant-menu-inline {
+          box-shadow: none;
+        }
+        .ant-menu-submenu-open,
+        .ant-menu-submenu-open .ant-menu,
+        .ant-menu-item-selected {
+          background: #2F3651;
+        }
+      }
+    }
+  }
+}
