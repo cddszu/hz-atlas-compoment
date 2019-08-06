@@ -32,7 +32,7 @@ const navIconList = [
     iconName: 'icon-miningplatform'
   },
   {
-    mark: 'APP',
+    mark: 'DAP',
     name: '应用',
     iconName: 'icon-applicationplatform'
   },
