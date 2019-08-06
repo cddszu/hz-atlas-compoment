@@ -99,7 +99,6 @@ export default class Nav extends React.Component {
       activeProject: this.currentSys,
       hashUrl: window.location.hash,
     })
-    // this.props.getUserInfo()
   }
 
   onProjectClick = (project) => {
