@@ -3,45 +3,9 @@ import { Menu } from 'antd'
 import {urlMap, platforms} from './config'
 import './component.less'
 import axios from 'axios'
+import {setMap, authJudge, navIconList} from './utils'
 
 
-function setMap(arr) {
-  let o = {}
-  if (Array.isArray(arr)) {
-    arr.map(item => {
-      o[item.code] = setMap(item.children)
-    })
-  }
-  return o
-}
-
-const navIconList = [
-  {
-    mark: 'DMP',
-    name: '构建',
-    iconName: 'icon-dataplatform'
-  },
-  {
-    mark: 'GAP',
-    name: '分析',
-    iconName: 'icon-analysisplatform'
-  },
-  {
-    mark: 'DIP',
-    name: '挖掘',
-    iconName: 'icon-miningplatform'
-  },
-  {
-    mark: 'DAP',
-    name: '应用',
-    iconName: 'icon-applicationplatform'
-  },
-  {
-    mark: 'SYS',
-    name: '系统',
-    iconName: 'icon-systemplatform'
-  }
-]
 export default class Nav extends React.Component {
   constructor (props) {
     super(props)
@@ -85,7 +49,7 @@ export default class Nav extends React.Component {
 
         window.localStorage.setItem('RESOURCE', encodeURI(JSON.stringify(resourceTrees)))
         this.setState({
-          // urlMap: urlMap.filter(item => authJudge(item.permission, item.platform)),
+          urlMap: urlMap.filter(item => authJudge(item.permission, item.platform)),
           sysListMap: content.resourceTrees,
         })
       }
