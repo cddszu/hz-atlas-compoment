@@ -130,7 +130,8 @@ export default class Nav extends React.Component {
     const prefix = {
       DMP: '/atlasDmp/',
       GAP: '/atlasGap/',
-      SYS: '/atlasSys/'
+      SYS: '/atlasSys/',
+      DAP: '/atlasDap/'
     }
     return (
       <Menu
@@ -141,7 +142,7 @@ export default class Nav extends React.Component {
           newUrlMap.filter(item => item.platform === activeProject).map(item => {
             return <Menu.Item key={item.name} onClick={() => this.setState({hashUrl: `#${item.url}`})} >
               <a href={`${this.state.fixPrefix}${prefix[item.platform]}#${item.url}`} target={item.target || ''}
-                className={`${hashUrl.includes(`#${item.url}`) ? 'active' : ''}`}
+                className={hashUrl.includes(`#${item.url}`) && hashUrl ? 'active' : ''}
               >{item.name}</a>
             </Menu.Item>
           })

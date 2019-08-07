@@ -1,6 +1,6 @@
 {
   "name": "hz-atlas",
-  "version": "0.0.9",
+  "version": "0.0.14",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
