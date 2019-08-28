@@ -3,6 +3,7 @@ import { Menu } from 'antd'
 import {urlMap, platforms} from './config'
 import './component.less'
 import axios from 'axios'
+import ThemePicker from '../ThemePicker'
 import {setMap, authJudge, navIconList} from './utils'
 
 
@@ -75,6 +76,7 @@ export default class Nav extends React.Component {
 
   getSysNav = () => {
     const { activeProject, sysListMap } = this.state
+    const { theme, saveTheme, themeMap } = this.props
     const navMarks = sysListMap && Object.keys(sysListMap)
     const navList = navIconList.filter((item) => {
       if (navMarks) {
@@ -94,6 +96,12 @@ export default class Nav extends React.Component {
             })
           }
         </ul>
+        <ThemePicker
+          className="project-nav-themepicker"
+          theme={theme}
+          saveTheme={saveTheme}
+          themeMap={themeMap}
+          />
       </div>
     )
   }
@@ -140,10 +148,13 @@ export default class Nav extends React.Component {
       >
         {
           newUrlMap.filter(item => item.platform === activeProject).map(item => {
-            return <Menu.Item key={item.name} onClick={() => this.setState({hashUrl: `#${item.url}`})} >
-              <a href={`${this.state.fixPrefix}${prefix[item.platform]}#${item.url}`} target={item.target || ''}
-                className={hashUrl.includes(`#${item.url}`) && hashUrl ? 'active' : ''}
-              >{item.name}</a>
+            return <Menu.Item
+              key={item.name}
+              onClick={() => this.setState({hashUrl: `#${item.url}`})}
+              className={hashUrl.includes(`#${item.url}`) && hashUrl !== '#/' ? 'active' : ''}>
+                <a href={`${this.state.fixPrefix}${prefix[item.platform]}#${item.url}`} target={item.target || ''}
+                  className={hashUrl.includes(`#${item.url}`) && hashUrl ? 'active' : ''}
+                >{item.name}</a>
             </Menu.Item>
           })
         }

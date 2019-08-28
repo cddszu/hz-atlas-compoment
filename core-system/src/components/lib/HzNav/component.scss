@@ -10,11 +10,12 @@
     padding-top: 20px;
     width: 50px;
     height: 100%;
-    border-top:1px solid rgba(255,255,255,0.0482);
-    background-image: url('./images/bg.png');
-    background-color: #383F5A;
-    background-size: cover;
-    background-repeat: no-repeat;
+    // border-top:1px solid rgba(255,255,255,0.0482);
+    background: #424A68;
+    // background-image: url('./images/bg.png');
+    // background-color: #383F5A;
+    // background-size: cover;
+    // background-repeat: no-repeat;
     .project-icon {
       padding: 8px 0;
       text-align: center;
@@ -50,7 +51,7 @@
         color: #4CB5B6;
         border-left: 2px solid #4CB5B6;
         background:#333a55;
-        opacity:0.7;
+        // opacity:0.7;
         .iconfont {
           margin-left: -2px;
           &.icon-dataplatform {
@@ -71,6 +72,10 @@
         }
       }
     }
+    .project-nav-themepicker {
+      position: absolute;
+      bottom: 10px;
+    }
   }
   .back-btn-closed {
     position: absolute;
@@ -84,7 +89,7 @@
     transition: opacity 1.8s ease 0s;
   }
 
-  
+
 
   .sub-nav {
     margin-left: 50px;
@@ -100,10 +105,12 @@
     }
 
     .sub-nav-title {
-      padding-left: 24px;
-      padding-right: 24px;
+      // padding-left: 24px;
+      // padding-right: 24px;
+      padding: 0 16px;
       color: #fff;
-      line-height: 67px;
+      line-height: 44px;
+      // line-height: 67px;
       border-bottom: 1px solid #2D334D;
 
       .back-btn {
@@ -140,11 +147,12 @@
         font-size: 12px;
         .ant-menu-submenu .ant-menu-submenu-title,
         .ant-menu-item {
-          height: 50px;
-          line-height: 50px;
+          height: 40px;
+          line-height: 40px;
           font-size: 12px;
           margin-top: 0;
           margin-bottom: 0;
+          padding-left: 16px !important;
           a.active {
             color: #4CB5B6;
             background: #333A55;

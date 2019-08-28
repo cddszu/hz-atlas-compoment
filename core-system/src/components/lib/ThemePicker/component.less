@@ -1,0 +1,105 @@
+.theme-picker {
+  position: relative;
+  .icon-colour {
+    font-size: 38px;
+    color: #A2B3C3;
+    cursor: pointer;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .theme-picker-box {
+    padding: 16px;
+    background-color: rgba(66, 74, 104, 0.95);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius:4px;
+    white-space: nowrap;
+
+    position: absolute;
+    z-index: 1000;
+    top: -20px;
+    left: 56px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      border-right: 5px solid rgba(66, 74, 104, 0.95);
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 0;
+
+      position: absolute;
+      left: -5px;
+      top: 36px;
+    }
+
+    .theme-item {
+      width: 30px;
+      text-align: center;
+      white-space: initial;
+      display: inline-block;
+      cursor: pointer;
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+      .theme-item-circle {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 3px;
+        border-radius: 50%;
+
+        position: relative;
+      }
+      .theme-item-circle-mix {
+        background: url('./assets/mix-theme.svg') no-repeat left center;
+        background-size: 100% 100%;
+      }
+      .theme-item-circle-pure {
+        background-color: #FFFFFF;
+      }
+      .theme-item-circle-deep {
+        background-color: #38405D;
+      }
+      &.theme-item-picked {
+        color: #fff;
+        .theme-item-circle::after {
+          content: '';
+          position: absolute;
+          display: inline-block;
+          width: 10px;
+          height: 8px;
+          background: url('./assets/picked_black.svg') no-repeat center center;
+          top: 11px;
+          left: 10px;
+        }
+        .theme-item-circle-deep::after {
+          background-image: url('./assets/picked_white.svg');
+        }
+
+      }
+    }
+  }
+}
+
+// 纯净的主题之下
+// .pure-theme {
+//   .theme-picker {
+//     .theme-picker-box {
+//       color: #B3B3B3;
+//       background-color: #FFFFFF;
+//       box-shadow:0px 5px 15px 0px rgba(221,221,221,0.5);
+//       &::before {
+//         border-right-color: #ffffff;
+//       }
+//       .theme-item .theme-item-circle-pure  {
+//         background-color: #EBEBEB;
+//       }
+//       .theme-item-picked {
+//         color: #5B5B5B;
+//       }
+//     }
+//   }
+// }

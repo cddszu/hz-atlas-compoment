@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>-huanfu-zhuangse</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="15" cy="15" r="15"></circle>
+        <path d="M15,0 L15,30 C6.71572875,30 0,23.2842712 0,15 C0,6.71572875 6.71572875,0 15,0 Z" id="path-3"></path>
+    </defs>
+    <g id="UI-规范" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(-699.000000, -436.000000)">
+            <g id="Group-8" transform="translate(699.000000, 436.000000)">
+                <g id="矩形">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="蒙版" fill="#EBEBEB" xlink:href="#path-1"></use>
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="形状结合" fill="#CACED3" xlink:href="#path-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
