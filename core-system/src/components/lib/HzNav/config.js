@@ -21,6 +21,7 @@ export const urlMap = [
   // {url: '/root/main/serviceMgt', permission: 'manager_project', platform: 'GAP', name: '管理项目'},
   {url: '/graph/search', permission: 'gdb_search', platform: 'GAP', target: '_blank', name: '图查询'},
   {url: '/graph/scene', permission: 'gs_sceneExplore', platform: 'GAP', target: '_blank', name: '场景探索'},
+  {url: '/root/main/offlineGraph', permission: 'offline', platform: 'GAP', name: '离线图查询'},
   {url: '/root/main/graphConfig', permission: 'style', platform: 'GAP', name: '可视化配置'},
   {url: '/root/main/hyperlinkConfig', permission: 'detail_hyperlinks', platform: 'GAP', name: '超链接配置'},
   {url: '/root/main/authMap', permission: 'permission_mapping_manger', platform: 'GAP', name: '权限映射'},

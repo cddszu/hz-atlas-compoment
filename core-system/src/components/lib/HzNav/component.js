@@ -57,13 +57,24 @@ export default class Nav extends React.Component {
     })
 
 
-
-
     this.setState({
       expandSubNav: this.currentSys !== '',
       activeProject: this.currentSys,
       hashUrl: window.location.hash,
+    }, () => {
+      this.handlePropExpand()
     })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.expandSubNav !== this.state.expandSubNav) {
+      this.handlePropExpand()
+    }
+  }
+
+  // 向父组件传递是否展开参数
+  handlePropExpand = () => {
+    this.props.expandSubNav && this.props.expandSubNav(this.state.expandSubNav)
   }
 
   onProjectClick = (project) => {
