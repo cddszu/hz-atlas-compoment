@@ -31,6 +31,7 @@ export const urlMap = [
   // 系统平台
   {url: '/root/main/userControl', permission: 'sys_user_manager', platform: 'SYS', name: '用户管理'},
   {url: '/root/main/rolePerssion', permission: 'sys_role_manger', platform: 'SYS', name: '系统角色管理'},
+  {url: '/root/main/displaySet', permission: 'display_set', platform: 'SYS', name: '平台展示设置'},
 ]
 
 
