@@ -3,20 +3,20 @@
  * @Author: linjianhuang
  * @Date: 2019-08-26 14:43:29
  * @Last Modified by: linjianhuang
- * @Last Modified time: 2019-08-28 14:42:13
+ * @Last Modified time: 2019-09-04 20:18:20
  */
 import React from 'react'
 import './component.less'
 
 let themeMap = [{
-  title: '撞色',
-  type: 'mix'
+  title: '深邃',
+  type: 'deep'
 }, {
   title: '纯净',
   type: 'pure'
 }, {
-  title: '深邃',
-  type: 'deep'
+  title: '撞色',
+  type: 'mix'
 }]
 
 class ThemePicker extends React.Component {
@@ -27,7 +27,7 @@ class ThemePicker extends React.Component {
       pickedType: 'mix'
     }
 
-    themeMap = this.props.themeMap ? this.props.themeMap : themeMap
+    themeMap = props.themeMap ? props.themeMap : themeMap
 
     this.handleShow = this.handleShow.bind(this)
     this.handleChange = this.handleChange.bind(this)

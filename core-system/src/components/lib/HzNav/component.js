@@ -87,7 +87,7 @@ export default class Nav extends React.Component {
 
   getSysNav = () => {
     const { activeProject, sysListMap } = this.state
-    const { theme, saveTheme, themeMap } = this.props
+    const { theme, saveTheme, themeMap, isThemePickerVisible } = this.props
     const navMarks = sysListMap && Object.keys(sysListMap)
     const navList = navIconList.filter((item) => {
       if (navMarks) {
@@ -107,12 +107,17 @@ export default class Nav extends React.Component {
             })
           }
         </ul>
-        <ThemePicker
-          className="project-nav-themepicker"
-          theme={theme}
-          saveTheme={saveTheme}
-          themeMap={themeMap}
-          />
+        {
+          isThemePickerVisible
+          ?
+            <ThemePicker
+              className="project-nav-themepicker"
+              theme={theme}
+              saveTheme={saveTheme}
+              themeMap={themeMap}
+              />
+          : null
+        }
       </div>
     )
   }
