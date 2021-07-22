@@ -29,7 +29,7 @@
     "redux-thunk": "^2.3.0",
     "source-map-explorer": "^1.7.0",
     "star-graph": "git+http://git.sz.haizhi.com/xieyuzhong/star-graph.git",
-    "xlsx": "^0.14.1"
+    "xlsx": "^0.17.0"
   },
   "watch": {
     "restart": "./config-overrides.js"
